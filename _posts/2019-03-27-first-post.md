@@ -1,0 +1,97 @@
+---
+layout: post
+title: "Vue.js 정리"
+tags: [Vue]
+comments: true
+---
+# Vue.js 정리
+
+## Vue.js란
+웹 페이지 화면을 개발하기 위한 프런트엔드 **프레임워크**이자 **라이브러리**
+
+<br><br>
+
+## Vue의 특징
+- HTML, CSS, 자바스크립트의 기초만 알아도 **쉽게 배울 수 있다**.
+- 성능이 우수하고 **빠르다**.
+- 앵귤러의 **양방향 데이터 바인딩** 특성을 지님. (뷰에서 보여지는 값과 모델 데이터 **값이 동기화**됨)
+- 리액트의 **단방향 데이터 바인딩** 특성을 지님.(데이터 전달 방향은 항상 **상위 컴포넌트에서 하위 컴포넌트**) 
+- 리액트의 **가상 돔**(Virtual DOM)기반 렌더링 특징을 지님. (**렌더링이 빠름**)
+- **MVVM**(Model View ViewModel) 패턴의 뷰 모델에 해당하는 화면단 라이브러리이다.
+- **컴포넌트 기반 프레임워크**이므로 **코드 재사용**하기 쉬움.
+
+<br><br>
+
+## 뷰 인스턴스
+뷰로 화면을 개발하기 위해 반드시 생성해야 하는 기본 단위입니다.
+```javascript
+new Vue({
+el: '#app',
+data: {
+	message: 'Hello World'
+}
+})
+```
+
+<br><br>
+
+## 뷰 인스턴스의 유효범위 
+Vue인스턴스에 설정된 **el속성에 지정한 화면 요소와 그 이하 레벨의 화면 요소**에만 유효
+
+<br><br>
+
+## 뷰 인스턴스 라이프 사이클
+인스턴스의 **상태**에 따라 호출할 수 있는 속성을 **라이프 사이클**(Life Cycle) 속성이라 한다.
+
+
+라이프사이클속성|내용
+------------|---
+**beforeCreate**|data, method, DOM 접근 불가
+**created**|data, method 접근 가능, DOM 접근 불가
+**beforeMount**|el속성에 지정한 화면 요소에 인스턴스를 부착하기 전에 호출됨
+**mounted**|data, method, DOM 접근 가능
+**beforeUpdate**|데이터가 변경되면 가삼 돔으로 화면을 다시 그리기 전에 호출됨
+**updated**|가상 돔으로 다시 화면을 그리고 난 후 호출됨
+**beforeDestroy**|뷰 인스턴스가 파괴되기 직전에 호출되는 단계
+**destroyed**|뷰 인스턴스가 파괴되고 나서 호출되는 단계
+
+
+>뷰의 반응성을 제공하기 위해 `$watch`속성으로 값들의 변경을 감지한다.  
+beforeMount 이벤트 후 `render()함수`를 호출하여 DOM을 그린다.  
+mounted나 updated는 최종 변환 시점이 다를 수 있으므로 `$nextTick()함수`를 이용하여 변환이 완료될 때 까지 **기다린다**.  
+updated에서 값을 변경하면 **무한루프에 빠질 수 있으므로** 값을 변경하려면 `computed 또는 watch`와 같은 속성을 사용하며 가급적이면 **beforeUpdate에서 값을 갱신**하며 **updated에서 DOM과 관련된 로직을 추가**한다.  
+beforDestroy단계는 뷰 인스턴스의 데이터를 삭제하기 좋다.
+
+<br><br>
+
+## 정리
+
+```javascript
+<div id="app"> 
+    {{ message }}
+</div> 
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+<script>
+ 
+    new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue.js!'
+        },
+        beforeCreate: function() {
+            console.log('beforeCreate');
+        },
+        created: function() {
+            console.log('created');
+        },
+        mounted: function() {
+            console.log('mounted');
+        },
+        updated: function() {
+            console.log('updated');
+        }
+    }); 
+</script>
+```

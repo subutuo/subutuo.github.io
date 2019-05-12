@@ -312,7 +312,7 @@ img {
 //
 
 .wrapper-masthead {
-  margin-bottom: 50px;
+  margin-bottom: 0;
 }
 
 .masthead {
@@ -400,7 +400,7 @@ nav {
 
 // Posts
 .posts > .post {
-  padding-bottom: 2em;
+  padding-bottom: 1em;
   border-bottom: 1px solid $divider-color;
 }
 

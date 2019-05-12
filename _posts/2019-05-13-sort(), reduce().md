@@ -67,7 +67,7 @@ console.log(array1.reduce(reducer, 5)) // 5 + 1 + 2 + 3 + 4 = 15
 
 ### 매개변수 
 
-~~~js
+~~~
     reduce 매개변수 arr.reduce(callback[, initialValue])
     callback 매개변수 : accumulator, currentValue, currentIndexOptional, arrayOptional
     

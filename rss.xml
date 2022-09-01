@@ -1,4 +1,153 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[YJ's Blog's RSS Feed]]></title><description><![CDATA[YJ's Blog]]></description><link>https://subutuo.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 29 Aug 2022 07:37:05 GMT</lastBuildDate><item><title><![CDATA[JSON stringify undefined 속성값 관련]]></title><description><![CDATA[위의 params 객체에서 stringify할 때 값이 undefined인 d 속성은 결과 값에 나오지 않는다. 물론 아래와 같이 parsing하여 결과를 가져오면 같은 결과를 도출한다. 문제는 APi 서버에서 d…]]></description><link>https://subutuo.github.io/blog/[2022-08-29 03] JSON stringify undefined 값 남기기/</link><guid isPermaLink="false">https://subutuo.github.io/blog/[2022-08-29 03] JSON stringify undefined 값 남기기/</guid><pubDate>Sun, 28 Aug 2022 15:00:30 GMT</pubDate><content:encoded>&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;js&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; params &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[YJ's Blog's RSS Feed]]></title><description><![CDATA[YJ's Blog]]></description><link>https://subutuo.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 01 Sep 2022 08:00:53 GMT</lastBuildDate><item><title><![CDATA[하위 태그 제외한 텍스트 정보 가져오기]]></title><description><![CDATA[문제 웹상의 데이터를 크롤링하다가 문제가 생겼다. 원하는 텍스트만을 크롤링하고 싶은데 Sibling 태그 정보들 까지 추출되었다. 원인 MDN 문서(textContent, innerText)에 따르면 textContent와 innerText…]]></description><link>https://subutuo.github.io/blog/[2022-09-01 01] TextNode 추출/</link><guid isPermaLink="false">https://subutuo.github.io/blog/[2022-09-01 01] TextNode 추출/</guid><pubDate>Wed, 31 Aug 2022 15:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;문제&lt;/h2&gt;
+&lt;p&gt;웹상의 데이터를 크롤링하다가 문제가 생겼다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;html&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-3&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  &amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-3&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-3&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  &amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-3&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-3&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;      원하는 텍스트  &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;&amp;lt;!-- 크롤링하고 싶은 텍스트 --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;      &amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-3&quot;&gt;h3&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;description&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;필요없는 텍스트&amp;lt;/&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-3&quot;&gt;h3&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;      &amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-3&quot;&gt;ul&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;        &amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-3&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;리스트원&amp;lt;/&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-3&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;        &amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-3&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;리스트투&amp;lt;/&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-3&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;      &amp;lt;/&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-3&quot;&gt;ul&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &amp;lt;/&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-3&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  &amp;lt;/&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-3&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-3&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;원하는 텍스트&lt;/code&gt;만을 크롤링하고 싶은데 Sibling 태그 정보들 까지 추출되었다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;js&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;document.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;#39;#name&amp;#39;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;).textContent&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// &amp;#39;원하는 텍스트필요없는 텍스트리스트원리스트투&amp;#39;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;document.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;#39;#name&amp;#39;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;).innerText&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// &amp;#39;원하는 텍스트\n필요없는 텍스트\n리스트원\n리스트투&amp;#39;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;원인&lt;/h2&gt;
+&lt;p&gt;MDN 문서(&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/API/Node/textContent&quot;&gt;textContent&lt;/a&gt;, &lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/API/HTMLElement/innerText&quot;&gt;innerText&lt;/a&gt;)에 따르면 textContent와 innerText 둘 다 하위의 텍스트까지 나타낸다고 정의되어 있다.&lt;/p&gt;
+&lt;p&gt;해당 node들을 구분하는 정보가 필요하다.&lt;/p&gt;
+&lt;h2&gt;해결&lt;/h2&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;js&quot; data-index=&quot;2&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// 유사배열이기 때문에 Array.from으로 감싸준다.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;Array&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  .&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(document.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;#39;#name&amp;#39;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;).childNodes)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  .&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-19 grvsc-t9ljLd-i grvsc-t4tStz-6&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; node.nodeType &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;===&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  .&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-19 grvsc-t9ljLd-i grvsc-t4tStz-6&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; node.data)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  .&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;nodeType으로 텍스트노드만 필터링하여 해결하였다.&lt;br&gt;
+nodeType이 3인 데이터가 해당 node의 Text정보다.&lt;br&gt;
+&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType&quot;&gt;nodeType MDN&lt;/a&gt;&lt;/p&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+  .abyss { background-color: #000c18; }
+  .abyss .grvsc-t9ljLd-i { font-style: italic; }
+  .abyss .grvsc-t9ljLd-1 { color: #6688CC; }
+  .abyss .grvsc-t9ljLd-7 { color: #225588; }
+  .abyss .grvsc-t9ljLd-6 { color: #DDBB88; }
+  .abyss .grvsc-t9ljLd-11 { color: #22AA44; }
+  .abyss .grvsc-t9ljLd-3 { color: #384887; }
+  .abyss .grvsc-t9ljLd-15 { color: #9966B8; }
+  .abyss .grvsc-t9ljLd-19 { color: #2277FF; }
+  .abyss .grvsc-t9ljLd-4 { color: #F280D0; }
+  .abyss .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
+  }
+  body[data-theme=dark] .grvsc-ps-t4tStz { color: #ffffff; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-1 { color: #FFFFFF; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-3 { color: #66B5F6; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-5 { color: #BB97E7; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-10 { color: #9DCDF5; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-2 { color: #A19B8F; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-6 { color: #F39961; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-9 { color: #EB7E81; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(0, 0, 0, 0.05));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(0, 0, 0, 0.2));
+  }
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[JSON stringify undefined 속성값 관련]]></title><description><![CDATA[위의 params 객체에서 stringify할 때 값이 undefined인 d 속성은 결과 값에 나오지 않는다. 물론 아래와 같이 parsing하여 결과를 가져오면 같은 같은 값이 나온다. 문제는 APi 서버에서 d…]]></description><link>https://subutuo.github.io/blog/[2022-08-29 03] JSON stringify undefined 값 남기기/</link><guid isPermaLink="false">https://subutuo.github.io/blog/[2022-08-29 03] JSON stringify undefined 값 남기기/</guid><pubDate>Sun, 28 Aug 2022 15:00:30 GMT</pubDate><content:encoded>&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;js&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; params &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    a: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    b: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    c: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
@@ -8,7 +157,7 @@
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t4tStz-1&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(result) &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// {&amp;quot;a&amp;quot;:1,&amp;quot;b&amp;quot;:2,&amp;quot;c&amp;quot;:null}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;위의 params 객체에서 stringify할 때 값이 &lt;code&gt;undefined&lt;/code&gt;인 &lt;code&gt;d&lt;/code&gt; 속성은 결과 값에 나오지 않는다.&lt;/p&gt;
-&lt;p&gt;물론 아래와 같이 parsing하여 결과를 가져오면 같은 결과를 도출한다.&lt;/p&gt;
+&lt;p&gt;물론 아래와 같이 parsing하여 결과를 가져오면 같은 같은 값이 나온다.&lt;/p&gt;
 &lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;js&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; params &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    a: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    b: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
@@ -21,7 +170,7 @@
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t4tStz-1&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(params.d) &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// undefined&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t4tStz-1&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(parsedData.d) &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// undefined&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;문제는 APi 서버에서 d 속성이 없어서 에러가 났다.&lt;/p&gt;
-&lt;p&gt;해결, 두번째 인자로 replacer 함수를 넣어주면 된다.&lt;/p&gt;
+&lt;p&gt;해결, JSON.stringify 두번째 인자로 replacer 함수를 넣어 원하는 대로 값으로 변경하면 된다.&lt;/p&gt;
 &lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;js&quot; data-index=&quot;2&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;replacer&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; (&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-19 grvsc-t9ljLd-i grvsc-t4tStz-6&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-19 grvsc-t9ljLd-i grvsc-t4tStz-6&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;) &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;typeof&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; value &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;===&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;#39;undefined&amp;#39;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; value &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// undefined to null&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; params &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    a: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
@@ -402,18 +551,18 @@
     background-color: var(--grvsc-line-highlighted-background-color, rgba(0, 0, 0, 0.05));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(0, 0, 0, 0.2));
   }
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[IIFE란]]></title><description><![CDATA[Immediately Invoked Function Expressions의 약어로 즉시실행 함수를 뜻한다. 함수를 선언하고 바로 그 함수를 실행하는 문법이다. es6문법이 나오기 전에는 var키워드를 통해 변수를 선언했는데 var…]]></description><link>https://subutuo.github.io/blog/[2022-08-29 00] IIFE/</link><guid isPermaLink="false">https://subutuo.github.io/blog/[2022-08-29 00] IIFE/</guid><pubDate>Sun, 28 Aug 2022 15:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code&gt;Immediately Invoked Function Expressions&lt;/code&gt;의 약어로 즉시실행 함수를 뜻한다.&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;js&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; () {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[IIFE란]]></title><description><![CDATA[Immediately Invoked Function Expressions의 약어로 즉시실행 함수를 뜻한다. 선언한 함수에 소괄호로 묶어 바로 실행하는 표현식이다. es6문법이 나오기 전에는 var키워드를 통해 변수를 선언했는데 var…]]></description><link>https://subutuo.github.io/blog/[2022-08-29 00] IIFE/</link><guid isPermaLink="false">https://subutuo.github.io/blog/[2022-08-29 00] IIFE/</guid><pubDate>Sun, 28 Aug 2022 15:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code&gt;Immediately Invoked Function Expressions&lt;/code&gt;의 약어로 즉시실행 함수를 뜻한다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;js&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; () {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// 내용&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;blockquote&gt;
-&lt;p&gt;함수를 선언하고&lt;/p&gt;
+&lt;p&gt;선언한 함수에&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;js&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; () {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// 내용&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;})() &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// invoke&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;blockquote&gt;
-&lt;p&gt;바로 그 함수를 실행하는 문법이다.&lt;/p&gt;
+&lt;p&gt;소괄호로 묶어 바로 실행하는 표현식이다.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;es6문법이 나오기 전에는 &lt;code&gt;var&lt;/code&gt;키워드를 통해 변수를 선언했는데&lt;br&gt;
 var 스코프가 &lt;code&gt;Function Scope&lt;/code&gt;였으므로 전역 영역을 오염시키기 쉬웠다.&lt;br&gt;
@@ -536,8 +685,8 @@ IIFE문법은 잘 사용하지 않는 듯 하다.&lt;/p&gt;
     text-underline-position: under;
   }
   .abyss .grvsc-t9ljLd-i { font-style: italic; }
-  .abyss .grvsc-t9ljLd-1 { color: #6688CC; }
   .abyss .grvsc-t9ljLd-15 { color: #9966B8; }
+  .abyss .grvsc-t9ljLd-1 { color: #6688CC; }
   .abyss .grvsc-t9ljLd-3 { color: #384887; }
   .abyss .grvsc-t9ljLd-19 { color: #2277FF; }
   .abyss .grvsc-t9ljLd-11 { color: #22AA44; }
@@ -550,8 +699,8 @@ IIFE문법은 잘 사용하지 않는 듯 하다.&lt;/p&gt;
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
   body[data-theme=dark] .grvsc-ps-t4tStz { color: #ffffff; }
-  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-1 { color: #FFFFFF; }
   body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-9 { color: #EB7E81; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-1 { color: #FFFFFF; }
   body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-2 { color: #A19B8F; }
   body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-6 { color: #F39961; }
   body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-10 { color: #9DCDF5; }

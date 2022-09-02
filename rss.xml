@@ -1,4 +1,141 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[YJ's Blog's RSS Feed]]></title><description><![CDATA[YJ's Blog]]></description><link>https://subutuo.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 02 Sep 2022 05:35:01 GMT</lastBuildDate><item><title><![CDATA[DOM Element 속성 출력하기]]></title><description><![CDATA[문제 document.querySelector('div')로 어떤 속성이 있는지 파악하기 위해 Object.keys()를 이용해 출력을 해보았다. $div 객체가 값이 있는데도 style이나 dataset 속성들이 출력되지 않았다. 원인 MDN…]]></description><link>https://subutuo.github.io/blog/[2022-09-02 01] el 속성 출력/</link><guid isPermaLink="false">https://subutuo.github.io/blog/[2022-09-02 01] el 속성 출력/</guid><pubDate>Fri, 02 Sep 2022 04:38:58 GMT</pubDate><content:encoded>&lt;h2&gt;문제&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[YJ's Blog's RSS Feed]]></title><description><![CDATA[YJ's Blog]]></description><link>https://subutuo.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 02 Sep 2022 06:17:13 GMT</lastBuildDate><item><title><![CDATA[Array.slice.call 그리고 Array.from]]></title><description><![CDATA[개발하다 이상한 문법을 발견했다. slice.call을 사용하더라 이유 arguments를 배열처럼 다루기 위해 Array.slice()를 이용한 것이다. arguments는 유사배열이며 실제 배열이 아니라 forEach(), map(), reduce…]]></description><link>https://subutuo.github.io/blog/[2022-09-02 01] Array.slice.call 그리고 Array.from/</link><guid isPermaLink="false">https://subutuo.github.io/blog/[2022-09-02 01] Array.slice.call 그리고 Array.from/</guid><pubDate>Fri, 02 Sep 2022 05:43:11 GMT</pubDate><content:encoded>&lt;p&gt;개발하다 이상한 문법을 발견했다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;js&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;testFunction&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; () {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t4tStz-1&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(arguments) &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// Array Like Object&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t4tStz-1&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;([].slice.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(arguments)) &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// [1, 2, 3, 4, 5]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t4tStz-1&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.prototype.slice.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(arguments)) &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// [1, 2, 3, 4, 5]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;testFunction&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;) &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// [1, 2, 3, 4, 5]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;slice.call을 사용하더라&lt;/p&gt;
+&lt;h2&gt;이유&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;arguments&lt;/code&gt;를 배열처럼 다루기 위해 Array.slice()를 이용한 것이다.&lt;br&gt;
+&lt;code&gt;arguments&lt;/code&gt;는 유사배열이며 실제 배열이 아니라&lt;br&gt;
+&lt;code&gt;forEach()&lt;/code&gt;, &lt;code&gt;map()&lt;/code&gt;, &lt;code&gt;reduce()&lt;/code&gt;와 같은 Array 인스턴스함수를 사용하지 못한다.&lt;/p&gt;
+&lt;p&gt;하지만 arguments 는 유사배열이므로 &lt;code&gt;[].fn.call(arguments, ...)&lt;/code&gt;를 이용해서 함수를 호출할 수 있다.&lt;/p&gt;
+&lt;p&gt;여기서 Array.slice()는 새로운 배열 객체를 반환해주므로 반환된 객체를 이용하려고 사용한 것이다. (&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/slice&quot;&gt;MDN Array.slice()&lt;/a&gt;)&lt;/p&gt;
+&lt;h2&gt;ES6&lt;/h2&gt;
+&lt;p&gt;ES6문법이 생기고 나서는 &lt;code&gt;slice.call()&lt;/code&gt;를 이용할 필요가 없어졌다.&lt;br&gt;
+유사배열을 새로운 객체로 반환해주는 &lt;code&gt;Array.from()&lt;/code&gt;함수가 생겼다. (&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/from&quot;&gt;MDN Array.from()&lt;/a&gt;)&lt;br&gt;
+또는 스프레드 연산자(...)으로도 대체 가능하다. (&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread_syntax&quot;&gt;MDN ...&lt;/a&gt;)&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;js&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;testFunction&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; () {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t4tStz-1&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(arguments) &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// Array Like Object&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t4tStz-1&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(arguments)) &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// [1, 2, 3, 4, 5]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t4tStz-1&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;arguments]) &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// [1, 2, 3, 4, 5]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+  .abyss { background-color: #000c18; }
+  .abyss .grvsc-t9ljLd-i { font-style: italic; }
+  .abyss .grvsc-t9ljLd-15 { color: #9966B8; }
+  .abyss .grvsc-t9ljLd-1 { color: #6688CC; }
+  .abyss .grvsc-t9ljLd-6 { color: #DDBB88; }
+  .abyss .grvsc-t9ljLd-3 { color: #384887; }
+  .abyss .grvsc-t9ljLd-7 { color: #225588; }
+  .abyss .grvsc-t9ljLd-4 { color: #F280D0; }
+  .abyss .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
+  }
+  body[data-theme=dark] .grvsc-ps-t4tStz { color: #ffffff; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-9 { color: #EB7E81; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-1 { color: #FFFFFF; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-5 { color: #BB97E7; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-3 { color: #66B5F6; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-2 { color: #A19B8F; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(0, 0, 0, 0.05));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(0, 0, 0, 0.2));
+  }
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[DOM Element 속성 출력하기]]></title><description><![CDATA[문제 document.querySelector('div')로 어떤 속성이 있는지 파악하기 위해 Object.keys()를 이용해 출력을 해보았다. $div 객체가 값이 있는데도 style이나 dataset 속성들이 출력되지 않았다. 원인 MDN…]]></description><link>https://subutuo.github.io/blog/[2022-09-02 01] el 속성 출력/</link><guid isPermaLink="false">https://subutuo.github.io/blog/[2022-09-02 01] el 속성 출력/</guid><pubDate>Fri, 02 Sep 2022 04:38:58 GMT</pubDate><content:encoded>&lt;h2&gt;문제&lt;/h2&gt;
 &lt;p&gt;document.querySelector(&apos;div&apos;)로 어떤 속성이 있는지 파악하기 위해&lt;br&gt;
 &lt;code&gt;Object.keys()&lt;/code&gt;를 이용해 출력을 해보았다.&lt;/p&gt;
 &lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;js&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; $div &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; document.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;#39;div&amp;#39;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
@@ -475,7 +612,7 @@ nodeType이 3인 데이터가 해당 node의 Text정보다.&lt;br&gt;
     background-color: var(--grvsc-line-highlighted-background-color, rgba(0, 0, 0, 0.05));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(0, 0, 0, 0.2));
   }
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[div 영역 focusing 하기]]></title><description><![CDATA[위 표기된 태그가 아닌 나머지 태그들은 tabindex 속성을 추가해야 포커싱 된다.]]></description><link>https://subutuo.github.io/blog/[2022-08-29 02] div 영역 focusing 하기 copy/</link><guid isPermaLink="false">https://subutuo.github.io/blog/[2022-08-29 02] div 영역 focusing 하기 copy/</guid><pubDate>Sun, 28 Aug 2022 15:00:20 GMT</pubDate><content:encoded>&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;js&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; div &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; document.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;#39;#testDiv&amp;#39;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[div 영역 focusing 하기]]></title><description><![CDATA[위 표기된 태그가 아닌 나머지 태그들은 tabindex 속성을 추가해야 포커싱 된다.]]></description><link>https://subutuo.github.io/blog/[2022-08-29 02] div 영역 focusing 하기/</link><guid isPermaLink="false">https://subutuo.github.io/blog/[2022-08-29 02] div 영역 focusing 하기/</guid><pubDate>Sun, 28 Aug 2022 15:00:20 GMT</pubDate><content:encoded>&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;js&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; div &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; document.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;#39;#testDiv&amp;#39;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;div.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;focus&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;() &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// ❌작동 안함&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;html&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;&amp;lt;!-- 대화형 콘텐츠 --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-3&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;

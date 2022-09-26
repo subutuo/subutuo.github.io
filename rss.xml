@@ -1,4 +1,216 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[YJ's Blog's RSS Feed]]></title><description><![CDATA[YJ's Blog]]></description><link>https://subutuo.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 26 Sep 2022 08:04:09 GMT</lastBuildDate><item><title><![CDATA[[Javascript] UTC 관련 날짜 정리 (with moment.js)]]></title><description><![CDATA[날짜 관련해서 헷갈리는 부분을 정리해보았다. GMT란 Greenwich Mean Time의 약어로 그리니치 평균시를 뜻한다. 영군 런던에 소재한 그리니치 천문대를 기점으로 정했다. GMT(+0) GMT+0은 Z로 표기한다. (Zulu Time…]]></description><link>https://subutuo.github.io/blog/javascript/[2022-09-05 02] moment UTC/</link><guid isPermaLink="false">https://subutuo.github.io/blog/javascript/[2022-09-05 02] moment UTC/</guid><pubDate>Mon, 05 Sep 2022 05:37:37 GMT</pubDate><content:encoded>&lt;p&gt;날짜 관련해서 헷갈리는 부분을 정리해보았다.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[YJ's Blog's RSS Feed]]></title><description><![CDATA[YJ's Blog]]></description><link>https://subutuo.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 26 Sep 2022 12:59:07 GMT</lastBuildDate><item><title><![CDATA[제너레이터 함수]]></title><description><![CDATA[리액트 소스를 보다보니 제너레이터 함수를 보게 되었다. 잘 모르니 정리해본다. Generator Function이란 제너레이터 함수은  function 키워드 뒤에 별표가 있는 함수를 가리킨다.
+제너레이터 함수 안에서 yield…]]></description><link>https://subutuo.github.io/blog/javascript/제너레이터 함수/</link><guid isPermaLink="false">https://subutuo.github.io/blog/javascript/제너레이터 함수/</guid><pubDate>Mon, 19 Sep 2022 13:53:30 GMT</pubDate><content:encoded>&lt;p&gt;리액트 소스를 보다보니 제너레이터 함수를 보게 되었다. 잘 모르니 정리해본다.&lt;/p&gt;
+&lt;h2&gt;Generator Function이란&lt;/h2&gt;
+&lt;p&gt;제너레이터 함수은  &lt;code&gt;function&lt;/code&gt; 키워드 뒤에 별표가 있는 함수를 가리킨다.
+제너레이터 함수 안에서 &lt;code&gt;yield&lt;/code&gt;키워드를 사용하여 함수를 작성하는데, 이는 &lt;code&gt;async/await&lt;/code&gt; 문법과 유사하다.
+&lt;code&gt;yield&lt;/code&gt;키워드는 &lt;code&gt;await&lt;/code&gt;키워드와 마찬가지로 해당 함수 내에서만 의미가 있으며,
+function에 &lt;code&gt;*&lt;/code&gt;키워드가 붙음으로써 리턴타입이 정해진다.
+async function은 프로미스, 제너레이터 함수는 &lt;code&gt;Generator 객체&lt;/code&gt;이다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;js&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// generator 함수 표기&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;generator&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;() {} &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// 또는 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; bar &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;Symbol&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.iterator]() {}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// generator 함수를 실행하여 generator 객체를 생성&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; gen &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;generator&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;() &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// &amp;quot;Generator { }&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;여기서 yield는 무엇이고 Generator 객체는 무엇인가?&lt;/h2&gt;
+&lt;p&gt;제너레이터 함수는 일반 함수와 동작하는 방식이 다르다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;js&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;testGen&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;() {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;yield&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;yield&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; gen &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;testGen&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;() &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// Generator 객체 반환&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t4tStz-1&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(gen.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;()) &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// {value: 1, done: false}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t4tStz-1&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(gen.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;()) &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// {value: 2, done: false}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t4tStz-1&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(gen.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;()) &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// {value: 3, done: true}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위와 같이 &lt;code&gt;next()&lt;/code&gt;함수를 호출할 때 마다 반환 값이 다른 것을 알 수 있으며, &lt;code&gt;yield&lt;/code&gt; 뒤의 데이터가 &lt;code&gt;value&lt;/code&gt;로 리턴되는 것을 유추할 수 있다.&lt;/p&gt;
+&lt;p&gt;실제로 &lt;code&gt;next()&lt;/code&gt;함수를 호출하면
+제너레이터 함수인 testGen 내에서 가장 가까운 &lt;code&gt;yield #value#&lt;/code&gt;문을 만날 때 까지 실행하고  &lt;code&gt;yield #value#&lt;/code&gt;를 만나게 되면 해당  &lt;code&gt;#value#&lt;/code&gt;값을 리턴하고 대기한다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;js&quot; data-index=&quot;2&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;testGen&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;() {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// 2. yield를 만남. 1을 반환한다.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;yield&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// 3. 대기&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;yield&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; gen &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;testGen&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;() &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// Generator 객체 반환&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// 1. next() 실행&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t4tStz-1&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(gen.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;()) &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// {value: 1, done: false}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;그다음 &lt;code&gt;next()&lt;/code&gt;함수를 다시 호출하면 함수실행이 다시 진행되고 다음 yield를 만나면 멈춘다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;js&quot; data-index=&quot;3&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;testGen&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;() {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;yield&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// 2. 다시 진행&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// 3. yield를 만남. 2을 반환한다.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;yield&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// 4. 대기&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// 1. next() 실행&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t4tStz-1&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(gen.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;()) &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// {value: 2, done: false}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;또  &lt;code&gt;next()&lt;/code&gt;함수를 다시 호출하지만 이번에는 return 값으로 value를 받아왔다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;js&quot; data-index=&quot;4&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;testGen&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;() {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;yield&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;yield&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// 2. 다시 진행&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// 3. yield를 찾지 못했음 3을 반환하며 done 속성을 true로 넘김&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// 1. next() 실행&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t4tStz-1&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(gen.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;()) &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// {value: 3, done: true}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;여기서 &lt;code&gt;next()&lt;/code&gt;함수는 Generator 객체가 &lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Iteration_protocols&quot;&gt;이터레이터 프로토콜&lt;/a&gt;을 준수하기 때문에 해당 함수가 있으며  &lt;code&gt;done&lt;/code&gt;과 &lt;code&gt;value&lt;/code&gt; 속성을 가지는 객체를 반환한다.&lt;br&gt;
+또한 Iterable protocol을 준수하기 때문에 for..of, Spread 문법, 구조 분해 할당이 가능하다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;js&quot; data-index=&quot;5&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;generator&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;() {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;yield&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;yield&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;yield&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// for..of&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; (&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; item &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;generator&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;()) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t4tStz-1&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;(item)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// 1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// 2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// 3&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// Spread 문법&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t4tStz-1&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;generator&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;()])&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// [1, 2, 3]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// 구조분해할당&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; [one, two, three] &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;generator&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t4tStz-1&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;({ one, two, three })&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;&lt;a href=&quot;https://ko.javascript.info/generators#ref-269&quot;&gt;&apos;yield’를 사용해 제너레이터 안·밖으로 정보 교환하기&lt;/a&gt;&lt;/h2&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;js&quot; data-index=&quot;6&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;unction&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;gen&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;() { _&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// 질문을 제너레이터 밖 코드에 던지고 답을 기다립니다. let result = yield &amp;quot;2 + 2 = ?&amp;quot;; // (*)_ alert(result); } let generator = gen(); let question = generator.next().value; // &amp;lt;-- yield는 value를 반환합니다. generator.next(4); // --&amp;gt; 결과를 제너레이터 안으로 전달합니다.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;사용 방법&lt;/h2&gt;
+&lt;h2&gt;제너레이터의 활용&lt;/h2&gt;
+&lt;h2&gt;정리하며&lt;/h2&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+  .abyss { background-color: #000c18; }
+  .abyss .grvsc-t9ljLd-i { font-style: italic; }
+  .abyss .grvsc-t9ljLd-3 { color: #384887; }
+  .abyss .grvsc-t9ljLd-15 { color: #9966B8; }
+  .abyss .grvsc-t9ljLd-7 { color: #225588; }
+  .abyss .grvsc-t9ljLd-1 { color: #6688CC; }
+  .abyss .grvsc-t9ljLd-6 { color: #DDBB88; }
+  .abyss .grvsc-t9ljLd-4 { color: #F280D0; }
+  .abyss .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
+  }
+  body[data-theme=dark] .grvsc-ps-t4tStz { color: #ffffff; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-2 { color: #A19B8F; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-9 { color: #EB7E81; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-1 { color: #FFFFFF; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-5 { color: #BB97E7; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-3 { color: #66B5F6; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(0, 0, 0, 0.05));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(0, 0, 0, 0.2));
+  }
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[Javascript] UTC 관련 날짜 정리 (with moment.js)]]></title><description><![CDATA[날짜 관련해서 헷갈리는 부분을 정리해보았다. GMT란 Greenwich Mean Time의 약어로 그리니치 평균시를 뜻한다. 영군 런던에 소재한 그리니치 천문대를 기점으로 정했다. GMT(+0) GMT+0은 Z로 표기한다. (Zulu Time…]]></description><link>https://subutuo.github.io/blog/javascript/[2022-09-05 02] moment UTC/</link><guid isPermaLink="false">https://subutuo.github.io/blog/javascript/[2022-09-05 02] moment UTC/</guid><pubDate>Mon, 05 Sep 2022 05:37:37 GMT</pubDate><content:encoded>&lt;p&gt;날짜 관련해서 헷갈리는 부분을 정리해보았다.&lt;/p&gt;
 &lt;p&gt;GMT란 &lt;code&gt;Greenwich Mean Time&lt;/code&gt;의 약어로 그리니치 평균시를 뜻한다.&lt;br&gt;
 영군 런던에 소재한 그리니치 천문대를 기점으로 정했다. GMT(+0)&lt;/p&gt;
 &lt;blockquote&gt;

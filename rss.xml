@@ -1,4 +1,517 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[YJ's Blog's RSS Feed]]></title><description><![CDATA[YJ's Blog]]></description><link>https://subutuo.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 27 Sep 2022 05:58:48 GMT</lastBuildDate><item><title><![CDATA[[Typescript] swagger API 타입 자동 생성하기]]></title><description><![CDATA[swagger에 정의된 API와 모델을 자동 추출해주는 모듈인 swagger-typescript-api를 이용한다. swagger 정보 json으로 내려받기 swagger 경로에 ?format=openapi를 붙여 json으로 내려받는다. ex…]]></description><link>https://subutuo.github.io/blog/typescript/swagger API 타입 자동 생성/</link><guid isPermaLink="false">https://subutuo.github.io/blog/typescript/swagger API 타입 자동 생성/</guid><pubDate>Tue, 27 Sep 2022 04:29:04 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code&gt;swagger&lt;/code&gt;에 정의된 API와 모델을 자동 추출해주는 모듈인 &lt;code&gt;swagger-typescript-api&lt;/code&gt;를 이용한다.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[YJ's Blog's RSS Feed]]></title><description><![CDATA[YJ's Blog]]></description><link>https://subutuo.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 01 Oct 2022 18:43:40 GMT</lastBuildDate><item><title><![CDATA[[Git] git 이전 브랜치로 되돌아가기]]></title><description><![CDATA[이전 브랜치로 되돌아가기 git checkout @{-n} n단계 이전의 브랜치로 돌아가는 명령어다. 더 간단하게는. @{-1}를 -로 축약해서 사용 가능하다. 두 브랜치를 병행하여 작업하는 경우가 많은데 이 떄 git checkout -를 이용하자.]]></description><link>https://subutuo.github.io/blog/git/git 이전 브랜치로 되돌아가기/</link><guid isPermaLink="false">https://subutuo.github.io/blog/git/git 이전 브랜치로 되돌아가기/</guid><pubDate>Sat, 01 Oct 2022 15:53:34 GMT</pubDate><content:encoded>&lt;h2&gt;이전 브랜치로 되돌아가기&lt;/h2&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;git checkout @{-1}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;git checkout @{-n}&lt;/code&gt; n단계 이전의 브랜치로 돌아가는 명령어다.&lt;/p&gt;
+&lt;h2&gt;더 간단하게는.&lt;/h2&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;git checkout -&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;@{-1}를 -로 축약해서 사용 가능하다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;두 브랜치를 병행하여 작업하는 경우가 많은데 이 떄 &lt;code&gt;git checkout -&lt;/code&gt;를 이용하자.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+  .abyss { background-color: #000c18; }
+  .abyss .grvsc-t9ljLd-1 { color: #6688CC; }
+  .abyss .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
+  }
+  body[data-theme=dark] .grvsc-ps-t4tStz { color: #ffffff; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-1 { color: #FFFFFF; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(0, 0, 0, 0.05));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(0, 0, 0, 0.2));
+  }
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[CRA - TS & ESLint & prettier 환경 설정 (1)]]></title><description><![CDATA[CRA 프로젝트에 eslint와 prettier를 셋업해보았는데 생각보다 어려워 정리해보았다. vscode 환경 기준으로 작성하였다. CRA typescript 템플릿 설치 우선 Create React App…]]></description><link>https://subutuo.github.io/blog/others/cra 환경설정-1/</link><guid isPermaLink="false">https://subutuo.github.io/blog/others/cra 환경설정-1/</guid><pubDate>Sat, 01 Oct 2022 15:53:34 GMT</pubDate><content:encoded>&lt;p&gt;CRA 프로젝트에 eslint와 prettier를 셋업해보았는데 생각보다 어려워 정리해보았다.&lt;/p&gt;
+&lt;p&gt;vscode 환경 기준으로 작성하였다.&lt;/p&gt;
+&lt;h2&gt;CRA typescript 템플릿 설치&lt;/h2&gt;
+&lt;p&gt;우선 Create React App 타입스크립트 템플릿으로 프로젝트를 생성한다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;yarn create react-app my-app --template typescript&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t4tStz-1&quot;&gt;cd&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; my-app&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;code &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;# vs-code 실행&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;ESLint 설치&lt;/h2&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;yarn add -D eslint&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;ESLint Extension 설치&lt;/h2&gt;
+&lt;p&gt;vscode extensions에서 &lt;code&gt;ESLint&lt;/code&gt;를 설치한다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;editor 상에서 포맷팅 기능 + 밑줄로 linting 관련 정보가 필요하므로 설치해준다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;eslintrc 파일 만들기&lt;/h2&gt;
+&lt;p&gt;ESLint를 사용하려면 프로젝트 root에 eslintrc 파일이 있어야 한다.
+해당 프로젝트 최상위 폴더에 가서 터미널로 &lt;code&gt;npm init @eslint/config&lt;/code&gt;를 입력한다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;2&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;npm init @eslint/config&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;How would you like to use ESLint&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; ... &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; To check syntax and find problems&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;What &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t4tStz-1&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; of modules does your project use&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; ...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; JavaScript modules (import/export)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;Which framework does your project use&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; ...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; React&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;Does your project use TypeScript&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;?&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; Yes&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;Where does your code run&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; ...  (Press &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;space&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; to select, &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; to toggle all, &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; to invert selection)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;√ Browser&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;√ Node&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;What format &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; you want your config file to be in&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; ...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;JavaScript&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;eslint-plugin-react@latest @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;Would you like to install them now with npm&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;?&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;Yes&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;React와 Typescript를 사용한다고 설정하면 관련 plugin과 parser가 받아진다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;@typescript-eslint/parser&lt;/code&gt;: 타입스크립트를 linting할 수 있도록 해주는 ESLint 파서&lt;br&gt;
+&lt;code&gt;@typescript-eslint/eslint-plugin&lt;/code&gt;: 타입스크립트 관련 linting 규칙&lt;br&gt;
+&lt;code&gt;eslint-plugin-react&lt;/code&gt;: react 관련 linting 규칙&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;아래는 자동 생성된 &lt;code&gt;.eslintrc.js&lt;/code&gt; 내용이다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;js&quot; data-index=&quot;3&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-5&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-5&quot;&gt;exports&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  env: {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    browser: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    es2021: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    node: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  },&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  extends: [&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;eslint:recommended&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;plugin:react/recommended&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;plugin:@typescript-eslint/recommended&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  ],&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  parser: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;@typescript-eslint/parser&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  parserOptions: {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    ecmaFeatures: {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;      jsx: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    },&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    ecmaVersion: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;latest&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    sourceType: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;module&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  },&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  plugins: [&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;react&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;@typescript-eslint&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;],&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  rules: {},&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;};&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;React Hooks API 관련 플러그인 추가&lt;/h2&gt;
+&lt;p&gt;추가로 React 16.8버전에 추가된 Hooks API를 사용한다면 별도의 플러그인을 추가로 받는다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;4&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;yarn add -D eslint-plugin-react-hooks&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;.eslintrc.js 수정&lt;/h3&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;js&quot; data-index=&quot;5&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-5&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-5&quot;&gt;exports&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  env: {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    browser: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    es2021: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    node: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  },&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  extends: [&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;eslint:recommended&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;plugin:react/recommended&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;plugin:@typescript-eslint/recommended&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  ],&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  parser: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;@typescript-eslint/parser&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  parserOptions: {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    ecmaFeatures: {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;      jsx: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    },&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    ecmaVersion: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;latest&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    sourceType: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;module&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  },&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  plugins: [&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;react&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;react-hooks&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// 추가&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;@typescript-eslint&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  ],&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  rules: {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;react/react-in-jsx-scope&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;off&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// 리액트 17버전 이상은 해당 룰이 의미없으므로 off&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;react-hooks/rules-of-hooks&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;error&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// 추가&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;react-hooks/exhaustive-deps&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;warn&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// 추가&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  },&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;};&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;prettier 설정&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;prettier&lt;/code&gt;은 소스 내 코드포맷팅(탭 사용할지, 콤마 붙일지, 세미콜론 붙일지..)을 정해주는 모듈이다. 자동으로 포맷팅에 맞게 수정해주는 기능도 있다.&lt;br&gt;
+prettier은 소스 실행과 상관 없이 가이드만 해주는 역할이기 때문에 ESLint와 연동하여 코드포맷팅을 강제하도록 한다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;6&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;yarn add -D prettier eslint-plugin-prettier eslint-config-prettier&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;prettier&lt;/code&gt;: prettier 모듈&lt;br&gt;
+&lt;code&gt;eslint-plugin-prettier&lt;/code&gt;: prettier 관련 linting 규칙&lt;br&gt;
+&lt;code&gt;eslint-config-prettier&lt;/code&gt;: 코드포맷팅 관련 ESLint 룰을 모두 비활성화시킨다. &lt;strong&gt;중요&lt;/strong&gt; (충돌방지역할)&lt;/p&gt;
+&lt;h2&gt;prettier Extension 설치&lt;/h2&gt;
+&lt;p&gt;vscode extensions에서 &lt;code&gt;Prettier - Code formatter&lt;/code&gt;를 설치한다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;editor 상에서 밑줄로 prettier 관련 정보를 표시주거나 포맷팅을 도와준다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;prettier 설정&lt;/h2&gt;
+&lt;p&gt;prettier를 사용하려면 프로젝트 root에 prettierrc 파일이 있어야 한다.&lt;br&gt;
+prettierrc.json 를 root폴더에 만들고 아래의 내용을 입력한다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;json&quot; data-index=&quot;7&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;&amp;quot;useTabs&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;&amp;quot;tabWidth&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;&amp;quot;singleQuote&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;&amp;quot;printWidth&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;120&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;&amp;quot;trailingComma&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;es5&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;많이 사용하는 기본 옵션이고, 그 외 추가적인 옵션은 &lt;a href=&quot;https://prettier.io/docs/en/options.html&quot;&gt;docs&lt;/a&gt;를 참고하여 작성한다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ESLint에서도 포맷팅 관련 설정을 할 수 있는데 prettier와 연동한다면 사용하지 않는 것이 좋다.&lt;br&gt;
+vscode에서 받은 &lt;code&gt;prettier Extension&lt;/code&gt;은 prettierrc 설정 내용만 보고 포맷팅을 지원해주므로, 소스를 실행하면 에러가 나는데 에디터에서는 에러가 안나는 현상이 발생한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;.eslintrc.js 수정&lt;/h3&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;js&quot; data-index=&quot;8&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-5&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-5&quot;&gt;exports&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  env: {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    browser: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    es2021: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    node: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  },&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  extends: [&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;eslint:recommended&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;plugin:react/recommended&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;plugin:prettier/recommended&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// 추가&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;plugin:@typescript-eslint/recommended&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  ],&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  parser: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;@typescript-eslint/parser&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  parserOptions: {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    ecmaFeatures: {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;      jsx: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    },&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    ecmaVersion: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;latest&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    sourceType: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;module&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  },&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  plugins: [&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;prettier&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// 추가&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;react&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;react-hooks&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;@typescript-eslint&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  ],&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  rules: {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;react/react-in-jsx-scope&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;off&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;react-hooks/rules-of-hooks&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;error&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;react-hooks/exhaustive-deps&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;warn&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;prettier/prettier&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;error&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// 추가&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  },&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;};&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;ESLint와 prettier가 충돌나지 않도록 설정하는 것이 핵심이다.&lt;/p&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+  .abyss { background-color: #000c18; }
+  .abyss .grvsc-t9ljLd-i { font-style: italic; }
+  .abyss .grvsc-t9ljLd-1 { color: #6688CC; }
+  .abyss .grvsc-t9ljLd-15 { color: #9966B8; }
+  .abyss .grvsc-t9ljLd-3 { color: #384887; }
+  .abyss .grvsc-t9ljLd-7 { color: #225588; }
+  .abyss .grvsc-t9ljLd-4 { color: #F280D0; }
+  .abyss .grvsc-t9ljLd-11 { color: #22AA44; }
+  .abyss .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
+  }
+  body[data-theme=dark] .grvsc-ps-t4tStz { color: #ffffff; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-1 { color: #FFFFFF; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-2 { color: #A19B8F; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-9 { color: #EB7E81; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-5 { color: #BB97E7; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-3 { color: #66B5F6; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-10 { color: #9DCDF5; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(0, 0, 0, 0.05));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(0, 0, 0, 0.2));
+  }
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[CRA - TS & ESLint & prettier 환경 설정 (2)]]></title><description><![CDATA[추가적으로 설정하면 좋은 내용을 덧붙인다. 린트 관련 명령어 추가 일괄로 eslint에러나는 내용을 확인하거나 수정하려할 때 필요한 명령어다. 에러 확인 에러 수정]]></description><link>https://subutuo.github.io/blog/others/cra 환경설정-2/</link><guid isPermaLink="false">https://subutuo.github.io/blog/others/cra 환경설정-2/</guid><pubDate>Sat, 01 Oct 2022 15:53:34 GMT</pubDate><content:encoded>&lt;p&gt;추가적으로 설정하면 좋은 내용을 덧붙인다.&lt;/p&gt;
+&lt;h2&gt;린트 관련 명령어 추가&lt;/h2&gt;
+&lt;p&gt;일괄로 eslint에러나는 내용을 확인하거나 수정하려할 때 필요한 명령어다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;json&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;scripts&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-8 grvsc-t4tStz-7&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;&amp;quot;lint&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;eslint --cache &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;src/**/*.{js,jsx,ts,tsx,json}&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;&amp;quot;lint:fix&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;eslint --cache --fix &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;src/**/*.{js,jsx,ts,tsx,json}&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  },&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;에러 확인&lt;/h3&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;yarn lint&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;에러 수정&lt;/h3&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;2&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;yarn lint:fix &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;# 자동으로 수정가능한 내용만 수정해준다.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+  .abyss { background-color: #000c18; }
+  .abyss .grvsc-t9ljLd-i { font-style: italic; }
+  .abyss .grvsc-t9ljLd-1 { color: #6688CC; }
+  .abyss .grvsc-t9ljLd-11 { color: #22AA44; }
+  .abyss .grvsc-t9ljLd-8 { color: #F8F8F0; }
+  .abyss .grvsc-t9ljLd-15 { color: #9966B8; }
+  .abyss .grvsc-t9ljLd-4 { color: #F280D0; }
+  .abyss .grvsc-t9ljLd-3 { color: #384887; }
+  .abyss .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
+  }
+  body[data-theme=dark] .grvsc-ps-t4tStz { color: #ffffff; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-1 { color: #FFFFFF; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-10 { color: #9DCDF5; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-7 { color: #FAFBFC; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-3 { color: #66B5F6; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-2 { color: #A19B8F; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(0, 0, 0, 0.05));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(0, 0, 0, 0.2));
+  }
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[Typescript] swagger API 타입 자동 생성하기]]></title><description><![CDATA[swagger에 정의된 API와 모델을 자동 추출해주는 모듈인 swagger-typescript-api를 이용한다. swagger 정보 json으로 내려받기 swagger 경로에 ?format=openapi를 붙여 json으로 내려받는다. ex…]]></description><link>https://subutuo.github.io/blog/typescript/swagger API 타입 자동 생성/</link><guid isPermaLink="false">https://subutuo.github.io/blog/typescript/swagger API 타입 자동 생성/</guid><pubDate>Tue, 27 Sep 2022 04:29:04 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code&gt;swagger&lt;/code&gt;에 정의된 API와 모델을 자동 추출해주는 모듈인 &lt;code&gt;swagger-typescript-api&lt;/code&gt;를 이용한다.&lt;/p&gt;
 &lt;h2&gt;swagger 정보 json으로 내려받기&lt;/h2&gt;
 &lt;p&gt;swagger 경로에 &lt;code&gt;?format=openapi&lt;/code&gt;를 붙여 json으로 내려받는다.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -182,9 +695,9 @@
 &lt;/style&gt;</content:encoded></item><item><title><![CDATA[[Typescript] String Literal 관련하여]]></title><description><![CDATA[String Literal Type이란 string타입이면서도 변수에 확정된 값을 지닌 타입이다. string타입 보다 narrow한 타입이다. String Literal Type인지 확인 방법 vscode와 같은 IDE…]]></description><link>https://subutuo.github.io/blog/typescript/String Literal/</link><guid isPermaLink="false">https://subutuo.github.io/blog/typescript/String Literal/</guid><pubDate>Mon, 26 Sep 2022 23:29:04 GMT</pubDate><content:encoded>&lt;h2&gt;String Literal Type이란&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;string&lt;/code&gt;타입이면서도 변수에 확정된 값을 지닌 타입이다. &lt;code&gt;string&lt;/code&gt;타입 보다 &lt;code&gt;narrow&lt;/code&gt;한 타입이다.&lt;/p&gt;
 &lt;h2&gt;String Literal Type인지 확인 방법&lt;/h2&gt;
-&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;ts&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-15 grvsc-t4tStz-i&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; xxx &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-7&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-11&quot;&gt;&amp;#39;xxx&amp;#39;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-3&quot;&gt;// var xxx: string&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-15 grvsc-t4tStz-i&quot;&gt;let&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; yyy &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-7&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-11&quot;&gt;&amp;#39;yyy&amp;#39;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-3&quot;&gt;// let yyy: string&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-15 grvsc-t4tStz-i&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; zzz &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-7&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-11&quot;&gt;&amp;#39;zzz&amp;#39;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-3&quot;&gt;// const zzz: &amp;quot;zzz&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;ts&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; xxx &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;#39;xxx&amp;#39;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// var xxx: string&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;let&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; yyy &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;#39;yyy&amp;#39;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// let yyy: string&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; zzz &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;#39;zzz&amp;#39;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// const zzz: &amp;quot;zzz&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;code&gt;vscode&lt;/code&gt;와 같은 IDE에서 해당 변수에 마우스를 가져다대면 타입이 유추된다.
 타입이 값으로 나오는 경우가 &lt;code&gt;String Literal Type&lt;/code&gt;이다.&lt;/p&gt;
 &lt;h2&gt;String Literal Type은 되고 String은 안된다.&lt;/h2&gt;
@@ -346,15 +859,11 @@ String Literal과 관련하여 다시 풀어말하면,
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
   body[data-theme=dark] .grvsc-ps-t4tStz { color: #ffffff; }
-  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-i { font-style: italic; }
-  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-15 { color: undefined; }
-  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-1 { color: #FFFFFF; }
-  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-7 { color: #FAFBFC; }
-  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-11 { color: #E36209; }
-  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-3 { color: #66B5F6; }
   body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-9 { color: #EB7E81; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-1 { color: #FFFFFF; }
   body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-10 { color: #9DCDF5; }
   body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-2 { color: #A19B8F; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-3 { color: #66B5F6; }
   body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-5 { color: #BB97E7; }
   body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-line-highlighted::before {
     background-color: var(--grvsc-line-highlighted-background-color, rgba(0, 0, 0, 0.05));
@@ -1693,20 +2202,20 @@ IIFE문법은 잘 사용하지 않는 듯 하다.&lt;/p&gt;
 &lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;js&quot; data-index=&quot;2&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;/// https://code.jquery.com/jquery-3.6.1.js&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;( &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;( &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-19 grvsc-t9ljLd-i grvsc-t4tStz-6&quot;&gt;global&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-19 grvsc-t9ljLd-i grvsc-t4tStz-6&quot;&gt;factory&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; ) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;use strict&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;use strict&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; ( &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;typeof&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-5&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;===&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;object&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;typeof&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-5&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-5&quot;&gt;exports&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;===&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;object&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; ) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;		&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-5&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-5&quot;&gt;exports&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; global.document &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;?&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;			&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;factory&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;( global, &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; ) &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;:&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;			&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;( &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-19 grvsc-t9ljLd-i grvsc-t4tStz-6&quot;&gt;w&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; ) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;				&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; ( &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;w.document ) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;					&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;throw&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-5 grvsc-t9ljLd-u grvsc-t4tStz-1&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;( &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;jQuery requires a window with a document&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; );&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;				}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;				&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;factory&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;( w );&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;			};&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;	} &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;		&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;factory&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;( global );&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;	}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; ( &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;typeof&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-5&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;===&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;object&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;typeof&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-5&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-5&quot;&gt;exports&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;===&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;object&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; ) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-5&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-5&quot;&gt;exports&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; global.document &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;?&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;factory&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;( global, &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; ) &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;:&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;( &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-19 grvsc-t9ljLd-i grvsc-t4tStz-6&quot;&gt;w&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; ) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; ( &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;w.document ) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;          &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;throw&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-5 grvsc-t9ljLd-u grvsc-t4tStz-1&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;( &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;jQuery requires a window with a document&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; );&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;        }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;factory&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;( w );&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;      };&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  } &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-6 grvsc-t4tStz-5&quot;&gt;factory&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;( global );&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// Pass this if window is not defined yet&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;} )( &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;typeof&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; window &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;!==&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;undefined&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; window &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; this, &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-9&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;( &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-19 grvsc-t9ljLd-i grvsc-t4tStz-6&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-19 grvsc-t9ljLd-i grvsc-t4tStz-6&quot;&gt;noGlobal&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; ) {})&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;

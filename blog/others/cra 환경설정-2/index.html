@@ -182,18 +182,87 @@ data-styled.g35[id="blogPost__Title-sc-10f9q5o-8"]{content:"boXytW,"}/*!sc*/
 
             setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'))
           })()
-        </script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="layout__Container-sc-vjrsoh-0 llHnTD"><nav aria-label="Global Navigation" class="navBar__Nav-sc-1fur2tn-0 eWDqWP"><div class="background__Background-sc-3cnrol-0 navBar__NavBackground-sc-1fur2tn-4 ZUJjE eNEVLK"></div><div class="navBar__Content-sc-1fur2tn-1 jppRhq"><h1 class="navBar__Title-sc-1fur2tn-2 jXZNjc"><a href="/">YJ&#x27;s Blog</a></h1><div class="navBar__LinkWrap-sc-1fur2tn-7 kkuUEF"><div class="navBar__Curtain-sc-1fur2tn-5 biuShl"></div><div class="navBar__LinkContent-sc-1fur2tn-6 kcdBrh"><button aria-label="Menu" class="menuIcon__MenuIconButton-sc-mfy44q-2 eykCKX"><div class="menuIcon__MenuIconBreadTop-sc-mfy44q-0 eYVgdL"><div></div></div><div class="menuIcon__MenuIconBreadBottom-sc-mfy44q-1 bgvtUy"><div></div></div></button><ul class="navBar__LinkUl-sc-1fur2tn-3 hGyaIj"><li><a href="/">Home</a></li><li><a href="/about/">About</a></li><li><a target="__blank" rel="noreferrer" href="https://github.com/subutuo">Github</a></li><li><button class="themeToggleButton__Button-sc-1k2p4ae-4 jrOsmm"><div class="background__Background-sc-3cnrol-0 themeToggleButton__ButtonBackground-sc-1k2p4ae-1 ZUJjE ebeBjm"></div><div class="themeToggleButton__Content-sc-1k2p4ae-2 jGRDkw"><svg version="1.1" x="0px" y="0px" viewBox="0 0 24 24" class="themeToggleButton__Icon-sc-1k2p4ae-0 gZvVnU"><path d="M16.3,15.2c-4.1-1.2-7.2-4.8-7.5-9.1C8.8,4.8,8.9,3.5,9.3,2.4C4.8,3.6,1.5,8,2.1,13.1c0.5,4.6,4.2,8.3,8.7,8.8 c4.9,0.6,9.2-2.4,10.6-6.7C19.9,15.7,18.1,15.8,16.3,15.2z"></path></svg><span class="themeToggleButton__Text-sc-1k2p4ae-3 StJgp">Dark theme</span></div></button></li></ul></div></div></div></nav><main><article><div class="blogPost__OuterWrapper-sc-10f9q5o-0 cCdnOf"><div class="blogPost__InnerWrapper-sc-10f9q5o-1 jhhiGt"><div><header><div class="blogPost__Info-sc-10f9q5o-4 doqnCN"><span class="category__Category-sc-fn0yqa-0 blogPost__PostCategory-sc-10f9q5o-3 bYuIif bwMrpr">others</span><time dateTime="2022-10-01" class="dateTime__DateTime-sc-1v8ffrd-0 blogPost__Time-sc-10f9q5o-5 hMrSVX ktsvKP">2022-10-01</time></div><h1 class="blogPost__Title-sc-10f9q5o-8 boXytW">CRA - TS &amp; ESLint &amp; prettier 환경 설정 (2)</h1><p class="blogPost__Desc-sc-10f9q5o-6 bCnlhS"></p></header><div class="blogPost__Divider-sc-10f9q5o-7 dRnixY"></div><article class="markdown__Markdown-sc-yto5zt-0 cMdMYY"><p>추가적으로 설정하면 좋은 내용을 덧붙인다.</p>
-<h2>린트 관련 명령어 추가</h2>
-<p>일괄로 eslint에러나는 내용을 확인하거나 수정하려할 때 필요한 명령어다.</p>
-<pre class="grvsc-container abyss grvsc-ps-t4tStz" data-language="json" data-index="0"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">  </span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">&quot;scripts&quot;</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">: {</span></span></span>
+        </script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="layout__Container-sc-vjrsoh-0 llHnTD"><nav aria-label="Global Navigation" class="navBar__Nav-sc-1fur2tn-0 eWDqWP"><div class="background__Background-sc-3cnrol-0 navBar__NavBackground-sc-1fur2tn-4 ZUJjE eNEVLK"></div><div class="navBar__Content-sc-1fur2tn-1 jppRhq"><h1 class="navBar__Title-sc-1fur2tn-2 jXZNjc"><a href="/">YJ&#x27;s Blog</a></h1><div class="navBar__LinkWrap-sc-1fur2tn-7 kkuUEF"><div class="navBar__Curtain-sc-1fur2tn-5 biuShl"></div><div class="navBar__LinkContent-sc-1fur2tn-6 kcdBrh"><button aria-label="Menu" class="menuIcon__MenuIconButton-sc-mfy44q-2 eykCKX"><div class="menuIcon__MenuIconBreadTop-sc-mfy44q-0 eYVgdL"><div></div></div><div class="menuIcon__MenuIconBreadBottom-sc-mfy44q-1 bgvtUy"><div></div></div></button><ul class="navBar__LinkUl-sc-1fur2tn-3 hGyaIj"><li><a href="/">Home</a></li><li><a href="/about/">About</a></li><li><a target="__blank" rel="noreferrer" href="https://github.com/subutuo">Github</a></li><li><button class="themeToggleButton__Button-sc-1k2p4ae-4 jrOsmm"><div class="background__Background-sc-3cnrol-0 themeToggleButton__ButtonBackground-sc-1k2p4ae-1 ZUJjE ebeBjm"></div><div class="themeToggleButton__Content-sc-1k2p4ae-2 jGRDkw"><svg version="1.1" x="0px" y="0px" viewBox="0 0 24 24" class="themeToggleButton__Icon-sc-1k2p4ae-0 gZvVnU"><path d="M16.3,15.2c-4.1-1.2-7.2-4.8-7.5-9.1C8.8,4.8,8.9,3.5,9.3,2.4C4.8,3.6,1.5,8,2.1,13.1c0.5,4.6,4.2,8.3,8.7,8.8 c4.9,0.6,9.2-2.4,10.6-6.7C19.9,15.7,18.1,15.8,16.3,15.2z"></path></svg><span class="themeToggleButton__Text-sc-1k2p4ae-3 StJgp">Dark theme</span></div></button></li></ul></div></div></div></nav><main><article><div class="blogPost__OuterWrapper-sc-10f9q5o-0 cCdnOf"><div class="blogPost__InnerWrapper-sc-10f9q5o-1 jhhiGt"><div><header><div class="blogPost__Info-sc-10f9q5o-4 doqnCN"><span class="category__Category-sc-fn0yqa-0 blogPost__PostCategory-sc-10f9q5o-3 bYuIif bwMrpr">others</span><time dateTime="2022-10-03" class="dateTime__DateTime-sc-1v8ffrd-0 blogPost__Time-sc-10f9q5o-5 hMrSVX ktsvKP">2022-10-03</time></div><h1 class="blogPost__Title-sc-10f9q5o-8 boXytW">CRA - TS &amp; ESLint &amp; prettier 환경 설정 (2)</h1><p class="blogPost__Desc-sc-10f9q5o-6 bCnlhS"></p></header><div class="blogPost__Divider-sc-10f9q5o-7 dRnixY"></div><article class="markdown__Markdown-sc-yto5zt-0 cMdMYY"><p>추가적으로 설정하면 좋은 내용을 덧붙인다.</p>
+<h2>저장 시 자동 포매팅</h2>
+<p>최상위 디렉토리에서 <code>.vscode/settings.json</code>를 만들고 다음과 같이 입력한다.</p>
+<pre class="grvsc-container abyss grvsc-ps-t4tStz" data-language="json" data-index="0"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-3 grvsc-t4tStz-2">// .vscode/settings.json</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">{</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">  </span><span class="grvsc-t9ljLd-8 grvsc-t4tStz-7">...</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">  </span><span class="grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3">&quot;eslint.validate&quot;</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">: [</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">    </span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">&quot;javascript&quot;</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">    </span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">&quot;javascriptreact&quot;</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">    </span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">&quot;typescript&quot;</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">    </span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">&quot;typescriptreact&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">  ],</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">  </span><span class="grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3">&quot;editor.codeActionsOnSave&quot;</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">: {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">    </span><span class="grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3">&quot;source.fixAll.eslint&quot;</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">: </span><span class="grvsc-t9ljLd-4 grvsc-t4tStz-3">true</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">  },</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">## 린트 관련 명령어 추가</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">`package.json`파일에 아래의 script를 추가한다.</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">```json</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-3 grvsc-t4tStz-2">// package.json</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">  ...</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">  </span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">&quot;scripts&quot;</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">: {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">    </span><span class="grvsc-t9ljLd-8 grvsc-t4tStz-7">...</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">    </span><span class="grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3">&quot;lint&quot;</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">: </span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">&quot;eslint --cache </span><span class="grvsc-t9ljLd-4 grvsc-t4tStz-3">\&quot;</span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">src/**/*.{js,jsx,ts,tsx,json}</span><span class="grvsc-t9ljLd-4 grvsc-t4tStz-3">\&quot;</span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">&quot;</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">,</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">    </span><span class="grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3">&quot;lint:fix&quot;</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">: </span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">&quot;eslint --cache --fix </span><span class="grvsc-t9ljLd-4 grvsc-t4tStz-3">\&quot;</span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">src/**/*.{js,jsx,ts,tsx,json}</span><span class="grvsc-t9ljLd-4 grvsc-t4tStz-3">\&quot;</span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">    </span><span class="grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3">&quot;lint&quot;</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">: </span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">&quot;eslint </span><span class="grvsc-t9ljLd-4 grvsc-t4tStz-3">\&quot;</span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">src/**/*.{js,jsx,ts,tsx,json}</span><span class="grvsc-t9ljLd-4 grvsc-t4tStz-3">\&quot;</span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">&quot;</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">    </span><span class="grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3">&quot;lint:fix&quot;</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">: </span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">&quot;eslint --fix </span><span class="grvsc-t9ljLd-4 grvsc-t4tStz-3">\&quot;</span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">src/**/*.{js,jsx,ts,tsx,json}</span><span class="grvsc-t9ljLd-4 grvsc-t4tStz-3">\&quot;</span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">&quot;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">  },</span></span></span></code></pre>
-<h3>에러 확인</h3>
+<h3>문제점 찾기</h3>
 <pre class="grvsc-container abyss grvsc-ps-t4tStz" data-language="bash" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">yarn lint</span></span></span></code></pre>
-<h3>에러 수정</h3>
-<pre class="grvsc-container abyss grvsc-ps-t4tStz" data-language="bash" data-index="2"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">yarn lint:fix </span><span class="grvsc-t9ljLd-3 grvsc-t4tStz-2"># 자동으로 수정가능한 내용만 수정해준다.</span></span></span></code></pre>
+<h3>문제점 수정</h3>
+<pre class="grvsc-container abyss grvsc-ps-t4tStz" data-language="bash" data-index="2"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">yarn lint:fix </span><span class="grvsc-t9ljLd-3 grvsc-t4tStz-2"># 자동으로 문제있는 부분들을 수정한다.</span></span></span></code></pre>
+<pre class="grvsc-container abyss grvsc-ps-t4tStz" data-language="" data-index="3"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">## Extension 설치 권유</span></span>
+<span class="grvsc-line"><span class="grvsc-source">팀원에게 eslint, prettier 익스텐션을 설치하라고 권유할 수 있다.\</span></span>
+<span class="grvsc-line"><span class="grvsc-source">프로젝트 환경을 공유할 때 유용하다.\</span></span>
+<span class="grvsc-line"><span class="grvsc-source">최상위 디렉토리에서 `.vscode/extensions.json`를 만들고 다음과 같이 입력한다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">```json</span></span>
+<span class="grvsc-line"><span class="grvsc-source">// .vscode/extensions.json</span></span>
+<span class="grvsc-line"><span class="grvsc-source">{</span></span>
+<span class="grvsc-line"><span class="grvsc-source">  &quot;recommendations&quot;: [</span></span>
+<span class="grvsc-line"><span class="grvsc-source">    &quot;dbaeumer.vscode-eslint&quot;,</span></span>
+<span class="grvsc-line"><span class="grvsc-source">    &quot;esbenp.prettier-vscode&quot;</span></span>
+<span class="grvsc-line"><span class="grvsc-source">  ]</span></span>
+<span class="grvsc-line"><span class="grvsc-source">}</span></span></code></pre>
+<blockquote>
+<p>더 추가하고 싶다면 배열 안에 Extension Identifier를 넣어주면 된다.</p>
+</blockquote>
+<h2>pre-commit 시점 검증로직 추가</h2>
+<p>커밋 전 ESLint와 타입스크립트 검증 로직을 넣어보자.</p>
+<h3>모듈 설치</h3>
+<pre class="grvsc-container abyss grvsc-ps-t4tStz" data-language="bash" data-index="4"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">yarn add -D husky lint-staged npm-run-all</span></span></span></code></pre>
+<blockquote>
+<p><code>husky</code>: Git Hooks를 다루기 위해 사용<br>
+<code>lint-staged</code>: 커밋될 파일만 Lint검사하기 위해 사용<br>
+<code>npm-run-all</code>: 스크립트 병렬실행</p>
+</blockquote>
+<h3>스크립트 작성 &#x26; husky init</h3>
+<p><code>prepare</code>라는 스크립트를 만들어주고 실행한다.</p>
+<blockquote>
+<p>prepare 스크립트를 설정해 놓으면 yarn install시 <strong>자동</strong>으로 실행된다.</p>
+</blockquote>
+<pre class="grvsc-container abyss grvsc-ps-t4tStz" data-language="bash" data-index="5"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">npm set-script prepare </span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">&quot;husky install&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">npm run prepare </span><span class="grvsc-t9ljLd-3 grvsc-t4tStz-2"># .husky 폴더 생성됨</span></span></span></code></pre>
+<h3>pacakage.json 스크립트 작성</h3>
+<pre class="grvsc-container abyss grvsc-ps-t4tStz" data-language="json" data-index="6"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-3 grvsc-t4tStz-2">// pacakage.json</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">  </span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">&quot;scripts&quot;</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">: {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">    </span><span class="grvsc-t9ljLd-8 grvsc-t4tStz-7">...</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">    </span><span class="grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3">&quot;lint:fix&quot;</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">: </span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">&quot;eslint --fix </span><span class="grvsc-t9ljLd-4 grvsc-t4tStz-3">\&quot;</span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">src/**/*.{js,jsx,ts,tsx,json}</span><span class="grvsc-t9ljLd-4 grvsc-t4tStz-3">\&quot;</span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">&quot;</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">    </span><span class="grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3">&quot;lint-staged&quot;</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">: </span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">&quot;lint-staged&quot;</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">    </span><span class="grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3">&quot;check-types&quot;</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">: </span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">&quot;tsc --project tsconfig.json --pretty --noEmit&quot;</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">    </span><span class="grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3">&quot;validate&quot;</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">: </span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">&quot;npm-run-all --parallel check-types &amp;&amp; lint-staged&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">  },</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">  </span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">&quot;lint-staged&quot;</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">: {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">    </span><span class="grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3">&quot;*.{js,jsx,ts,tsx}&quot;</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">: </span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">&quot;yarn run lint:fix&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">  }</span></span></span></code></pre>
+<h3>pre-commit 훅 작성</h3>
+<pre class="grvsc-container abyss grvsc-ps-t4tStz" data-language="bash" data-index="7"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">npx husky add .husky/pre-commit </span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">&#39;yarn validate&#39;</span></span></span></code></pre>
+<p>이제 커밋 시점에 설정한 스크립트를 실행한다.\</p>
+<blockquote>
+<p>단점으로 pre-commit을 사용하게 되면 커밋 속도가 느려진다.</p>
+</blockquote>
 <style class="grvsc-styles">
   .grvsc-container {
     overflow: auto;
@@ -285,22 +354,22 @@ data-styled.g35[id="blogPost__Title-sc-10f9q5o-8"]{content:"boXytW,"}/*!sc*/
   
   .abyss { background-color: #000c18; }
   .abyss .grvsc-t9ljLd-i { font-style: italic; }
+  .abyss .grvsc-t9ljLd-3 { color: #384887; }
   .abyss .grvsc-t9ljLd-1 { color: #6688CC; }
-  .abyss .grvsc-t9ljLd-11 { color: #22AA44; }
   .abyss .grvsc-t9ljLd-8 { color: #F8F8F0; }
   .abyss .grvsc-t9ljLd-15 { color: #9966B8; }
+  .abyss .grvsc-t9ljLd-11 { color: #22AA44; }
   .abyss .grvsc-t9ljLd-4 { color: #F280D0; }
-  .abyss .grvsc-t9ljLd-3 { color: #384887; }
   .abyss .grvsc-line-highlighted::before {
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
   body[data-theme=dark] .grvsc-ps-t4tStz { color: #ffffff; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-2 { color: #A19B8F; }
   body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-1 { color: #FFFFFF; }
-  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-10 { color: #9DCDF5; }
   body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-7 { color: #FAFBFC; }
   body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-3 { color: #66B5F6; }
-  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-2 { color: #A19B8F; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-10 { color: #9DCDF5; }
   body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-line-highlighted::before {
     background-color: var(--grvsc-line-highlighted-background-color, rgba(0, 0, 0, 0.05));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(0, 0, 0, 0.2));

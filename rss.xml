@@ -1,11 +1,83 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[YJ's Blog's RSS Feed]]></title><description><![CDATA[YJ's Blog]]></description><link>https://subutuo.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 01 Oct 2022 18:43:40 GMT</lastBuildDate><item><title><![CDATA[[Git] git 이전 브랜치로 되돌아가기]]></title><description><![CDATA[이전 브랜치로 되돌아가기 git checkout @{-n} n단계 이전의 브랜치로 돌아가는 명령어다. 더 간단하게는. @{-1}를 -로 축약해서 사용 가능하다. 두 브랜치를 병행하여 작업하는 경우가 많은데 이 떄 git checkout -를 이용하자.]]></description><link>https://subutuo.github.io/blog/git/git 이전 브랜치로 되돌아가기/</link><guid isPermaLink="false">https://subutuo.github.io/blog/git/git 이전 브랜치로 되돌아가기/</guid><pubDate>Sat, 01 Oct 2022 15:53:34 GMT</pubDate><content:encoded>&lt;h2&gt;이전 브랜치로 되돌아가기&lt;/h2&gt;
-&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;git checkout @{-1}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;git checkout @{-n}&lt;/code&gt; n단계 이전의 브랜치로 돌아가는 명령어다.&lt;/p&gt;
-&lt;h2&gt;더 간단하게는.&lt;/h2&gt;
-&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;git checkout -&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;@{-1}를 -로 축약해서 사용 가능하다.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[YJ's Blog's RSS Feed]]></title><description><![CDATA[YJ's Blog]]></description><link>https://subutuo.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 03 Oct 2022 15:27:31 GMT</lastBuildDate><item><title><![CDATA[CRA - TS & ESLint & prettier 환경 설정 (2)]]></title><description><![CDATA[추가적으로 설정하면 좋은 내용을 덧붙인다. 저장 시 자동 포매팅 최상위 디렉토리에서 .vscode/settings.json를 만들고 다음과 같이 입력한다. 문제점 찾기 문제점 수정 더 추가하고 싶다면 배열 안에 Extension Identifier…]]></description><link>https://subutuo.github.io/blog/others/cra 환경설정-2/</link><guid isPermaLink="false">https://subutuo.github.io/blog/others/cra 환경설정-2/</guid><pubDate>Mon, 03 Oct 2022 14:11:37 GMT</pubDate><content:encoded>&lt;p&gt;추가적으로 설정하면 좋은 내용을 덧붙인다.&lt;/p&gt;
+&lt;h2&gt;저장 시 자동 포매팅&lt;/h2&gt;
+&lt;p&gt;최상위 디렉토리에서 &lt;code&gt;.vscode/settings.json&lt;/code&gt;를 만들고 다음과 같이 입력한다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;json&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// .vscode/settings.json&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-8 grvsc-t4tStz-7&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;&amp;quot;eslint.validate&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: [&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;javascript&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;javascriptreact&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;typescript&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;typescriptreact&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  ],&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;&amp;quot;editor.codeActionsOnSave&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;&amp;quot;source.fixAll.eslint&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  },&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;## 린트 관련 명령어 추가&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;`package.json`파일에 아래의 script를 추가한다.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;```json&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// package.json&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  ...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;scripts&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-8 grvsc-t4tStz-7&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;&amp;quot;lint&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;eslint &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;src/**/*.{js,jsx,ts,tsx,json}&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;&amp;quot;lint:fix&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;eslint --fix &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;src/**/*.{js,jsx,ts,tsx,json}&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  },&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;문제점 찾기&lt;/h3&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;yarn lint&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;문제점 수정&lt;/h3&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;2&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;yarn lint:fix &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;# 자동으로 문제있는 부분들을 수정한다.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;&quot; data-index=&quot;3&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;## Extension 설치 권유&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;팀원에게 eslint, prettier 익스텐션을 설치하라고 권유할 수 있다.\&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;프로젝트 환경을 공유할 때 유용하다.\&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;최상위 디렉토리에서 `.vscode/extensions.json`를 만들고 다음과 같이 입력한다.&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;```json&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;// .vscode/extensions.json&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;{&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;  &amp;quot;recommendations&amp;quot;: [&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;    &amp;quot;dbaeumer.vscode-eslint&amp;quot;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;    &amp;quot;esbenp.prettier-vscode&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;  ]&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;blockquote&gt;
-&lt;p&gt;두 브랜치를 병행하여 작업하는 경우가 많은데 이 떄 &lt;code&gt;git checkout -&lt;/code&gt;를 이용하자.&lt;/p&gt;
+&lt;p&gt;더 추가하고 싶다면 배열 안에 Extension Identifier를 넣어주면 된다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;pre-commit 시점 검증로직 추가&lt;/h2&gt;
+&lt;p&gt;커밋 전 ESLint와 타입스크립트 검증 로직을 넣어보자.&lt;/p&gt;
+&lt;h3&gt;모듈 설치&lt;/h3&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;4&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;yarn add -D husky lint-staged npm-run-all&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;husky&lt;/code&gt;: Git Hooks를 다루기 위해 사용&lt;br&gt;
+&lt;code&gt;lint-staged&lt;/code&gt;: 커밋될 파일만 Lint검사하기 위해 사용&lt;br&gt;
+&lt;code&gt;npm-run-all&lt;/code&gt;: 스크립트 병렬실행&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;스크립트 작성 &amp;#x26; husky init&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;prepare&lt;/code&gt;라는 스크립트를 만들어주고 실행한다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;prepare 스크립트를 설정해 놓으면 yarn install시 &lt;strong&gt;자동&lt;/strong&gt;으로 실행된다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;5&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;npm set-script prepare &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;husky install&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;npm run prepare &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;# .husky 폴더 생성됨&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;pacakage.json 스크립트 작성&lt;/h3&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;json&quot; data-index=&quot;6&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// pacakage.json&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;scripts&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-8 grvsc-t4tStz-7&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;&amp;quot;lint:fix&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;eslint --fix &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;src/**/*.{js,jsx,ts,tsx,json}&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;&amp;quot;lint-staged&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;lint-staged&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;&amp;quot;check-types&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;tsc --project tsconfig.json --pretty --noEmit&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;&amp;quot;validate&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;npm-run-all --parallel check-types &amp;amp;&amp;amp; lint-staged&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  },&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;lint-staged&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;&amp;quot;*.{js,jsx,ts,tsx}&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;yarn run lint:fix&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;pre-commit 훅 작성&lt;/h3&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;7&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;npx husky add .husky/pre-commit &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;#39;yarn validate&amp;#39;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이제 커밋 시점에 설정한 스크립트를 실행한다.\&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;단점으로 pre-commit을 사용하게 되면 커밋 속도가 느려진다.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;style class=&quot;grvsc-styles&quot;&gt;
   .grvsc-container {
@@ -97,34 +169,44 @@
   }
   
   .abyss { background-color: #000c18; }
+  .abyss .grvsc-t9ljLd-i { font-style: italic; }
+  .abyss .grvsc-t9ljLd-3 { color: #384887; }
   .abyss .grvsc-t9ljLd-1 { color: #6688CC; }
+  .abyss .grvsc-t9ljLd-8 { color: #F8F8F0; }
+  .abyss .grvsc-t9ljLd-15 { color: #9966B8; }
+  .abyss .grvsc-t9ljLd-11 { color: #22AA44; }
+  .abyss .grvsc-t9ljLd-4 { color: #F280D0; }
   .abyss .grvsc-line-highlighted::before {
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
   body[data-theme=dark] .grvsc-ps-t4tStz { color: #ffffff; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-2 { color: #A19B8F; }
   body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-1 { color: #FFFFFF; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-7 { color: #FAFBFC; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-3 { color: #66B5F6; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-10 { color: #9DCDF5; }
   body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-line-highlighted::before {
     background-color: var(--grvsc-line-highlighted-background-color, rgba(0, 0, 0, 0.05));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(0, 0, 0, 0.2));
   }
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[CRA - TS & ESLint & prettier 환경 설정 (1)]]></title><description><![CDATA[CRA 프로젝트에 eslint와 prettier를 셋업해보았는데 생각보다 어려워 정리해보았다. vscode 환경 기준으로 작성하였다. CRA typescript 템플릿 설치 우선 Create React App…]]></description><link>https://subutuo.github.io/blog/others/cra 환경설정-1/</link><guid isPermaLink="false">https://subutuo.github.io/blog/others/cra 환경설정-1/</guid><pubDate>Sat, 01 Oct 2022 15:53:34 GMT</pubDate><content:encoded>&lt;p&gt;CRA 프로젝트에 eslint와 prettier를 셋업해보았는데 생각보다 어려워 정리해보았다.&lt;/p&gt;
-&lt;p&gt;vscode 환경 기준으로 작성하였다.&lt;/p&gt;
-&lt;h2&gt;CRA typescript 템플릿 설치&lt;/h2&gt;
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[CRA - TS & ESLint & prettier 환경 설정 (1)]]></title><description><![CDATA[CRA 프로젝트에 eslint와 prettier를 셋업해보자. 1. CRA typescript 템플릿 설치 우선 Create React App 타입스크립트 템플릿으로 프로젝트를 생성한다. 2. ESLint 사전 준비 eslint 모듈 설치 ESLint…]]></description><link>https://subutuo.github.io/blog/others/cra 환경설정-1/</link><guid isPermaLink="false">https://subutuo.github.io/blog/others/cra 환경설정-1/</guid><pubDate>Mon, 03 Oct 2022 14:11:31 GMT</pubDate><content:encoded>&lt;p&gt;CRA 프로젝트에 eslint와 prettier를 셋업해보자.&lt;/p&gt;
+&lt;h2&gt;1. CRA typescript 템플릿 설치&lt;/h2&gt;
 &lt;p&gt;우선 Create React App 타입스크립트 템플릿으로 프로젝트를 생성한다.&lt;/p&gt;
 &lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;yarn create react-app my-app --template typescript&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t4tStz-1&quot;&gt;cd&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; my-app&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;code &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;# vs-code 실행&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;ESLint 설치&lt;/h2&gt;
+&lt;h2&gt;2. ESLint 사전 준비&lt;/h2&gt;
+&lt;h3&gt;eslint 모듈 설치&lt;/h3&gt;
 &lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;yarn add -D eslint&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;ESLint Extension 설치&lt;/h2&gt;
+&lt;h3&gt;ESLint Extension 설치&lt;/h3&gt;
 &lt;p&gt;vscode extensions에서 &lt;code&gt;ESLint&lt;/code&gt;를 설치한다.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;editor 상에서 포맷팅 기능 + 밑줄로 linting 관련 정보가 필요하므로 설치해준다.&lt;/p&gt;
+&lt;p&gt;ESLint환경에선 필수다.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2&gt;eslintrc 파일 만들기&lt;/h2&gt;
-&lt;p&gt;ESLint를 사용하려면 프로젝트 root에 eslintrc 파일이 있어야 한다.
-해당 프로젝트 최상위 폴더에 가서 터미널로 &lt;code&gt;npm init @eslint/config&lt;/code&gt;를 입력한다.&lt;/p&gt;
+&lt;h2&gt;3. eslintrc 파일 생성&lt;/h2&gt;
+&lt;p&gt;ESLint를 사용하려면 프로젝트 최상위 폴더에 eslintrc 파일이 있어야 한다.&lt;br&gt;
+최상위 폴더에 가서 터미널로 &lt;code&gt;npm init @eslint/config&lt;/code&gt;를 입력한다.&lt;/p&gt;
 &lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;2&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;npm init @eslint/config&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;How would you like to use ESLint&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; ... &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
@@ -156,7 +238,8 @@
 &lt;code&gt;eslint-plugin-react&lt;/code&gt;: react 관련 linting 규칙&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;아래는 자동 생성된 &lt;code&gt;.eslintrc.js&lt;/code&gt; 내용이다.&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;js&quot; data-index=&quot;3&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-5&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-5&quot;&gt;exports&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;js&quot; data-index=&quot;3&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// .eslintrc.js&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-5&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-5&quot;&gt;exports&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-7 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  env: {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    browser: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    es2021: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
@@ -179,7 +262,7 @@
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  rules: {},&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;};&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;React Hooks API 관련 플러그인 추가&lt;/h2&gt;
+&lt;h2&gt;4. React Hooks API 관련 플러그인 추가&lt;/h2&gt;
 &lt;p&gt;추가로 React 16.8버전에 추가된 Hooks API를 사용한다면 별도의 플러그인을 추가로 받는다.&lt;/p&gt;
 &lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;4&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;yarn add -D eslint-plugin-react-hooks&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h3&gt;.eslintrc.js 수정&lt;/h3&gt;
@@ -214,21 +297,21 @@
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  },&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;};&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;prettier 설정&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;prettier&lt;/code&gt;은 소스 내 코드포맷팅(탭 사용할지, 콤마 붙일지, 세미콜론 붙일지..)을 정해주는 모듈이다. 자동으로 포맷팅에 맞게 수정해주는 기능도 있다.&lt;br&gt;
+&lt;h2&gt;5. prettier&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;prettier&lt;/code&gt;은 소스 내 코드포맷팅을 정해주는 모듈이다.&lt;br&gt;
 prettier은 소스 실행과 상관 없이 가이드만 해주는 역할이기 때문에 ESLint와 연동하여 코드포맷팅을 강제하도록 한다.&lt;/p&gt;
 &lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;6&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;yarn add -D prettier eslint-plugin-prettier eslint-config-prettier&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;code&gt;prettier&lt;/code&gt;: prettier 모듈&lt;br&gt;
 &lt;code&gt;eslint-plugin-prettier&lt;/code&gt;: prettier 관련 linting 규칙&lt;br&gt;
 &lt;code&gt;eslint-config-prettier&lt;/code&gt;: 코드포맷팅 관련 ESLint 룰을 모두 비활성화시킨다. &lt;strong&gt;중요&lt;/strong&gt; (충돌방지역할)&lt;/p&gt;
-&lt;h2&gt;prettier Extension 설치&lt;/h2&gt;
+&lt;h3&gt;prettier Extension 설치&lt;/h3&gt;
 &lt;p&gt;vscode extensions에서 &lt;code&gt;Prettier - Code formatter&lt;/code&gt;를 설치한다.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;editor 상에서 밑줄로 prettier 관련 정보를 표시주거나 포맷팅을 도와준다.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2&gt;prettier 설정&lt;/h2&gt;
-&lt;p&gt;prettier를 사용하려면 프로젝트 root에 prettierrc 파일이 있어야 한다.&lt;br&gt;
-prettierrc.json 를 root폴더에 만들고 아래의 내용을 입력한다.&lt;/p&gt;
+&lt;h3&gt;prettier 설정&lt;/h3&gt;
+&lt;p&gt;prettier를 사용하려면 프로젝트 최상위 폴더에 prettierrc 파일이 있어야 한다.&lt;br&gt;
+&lt;code&gt;prettierrc.json&lt;/code&gt; 를 만들고 아래의 내용을 입력한다.&lt;/p&gt;
 &lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;json&quot; data-index=&quot;7&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;&amp;quot;useTabs&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;&amp;quot;tabWidth&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
@@ -275,7 +358,6 @@ vscode에서 받은 &lt;code&gt;prettier Extension&lt;/code&gt;은 prettierrc �
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;prettier/prettier&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;error&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;// 추가&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  },&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;};&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;ESLint와 prettier가 충돌나지 않도록 설정하는 것이 핵심이다.&lt;/p&gt;
 &lt;style class=&quot;grvsc-styles&quot;&gt;
   .grvsc-container {
     overflow: auto;
@@ -388,18 +470,15 @@ vscode에서 받은 &lt;code&gt;prettier Extension&lt;/code&gt;은 prettierrc �
     background-color: var(--grvsc-line-highlighted-background-color, rgba(0, 0, 0, 0.05));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(0, 0, 0, 0.2));
   }
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[CRA - TS & ESLint & prettier 환경 설정 (2)]]></title><description><![CDATA[추가적으로 설정하면 좋은 내용을 덧붙인다. 린트 관련 명령어 추가 일괄로 eslint에러나는 내용을 확인하거나 수정하려할 때 필요한 명령어다. 에러 확인 에러 수정]]></description><link>https://subutuo.github.io/blog/others/cra 환경설정-2/</link><guid isPermaLink="false">https://subutuo.github.io/blog/others/cra 환경설정-2/</guid><pubDate>Sat, 01 Oct 2022 15:53:34 GMT</pubDate><content:encoded>&lt;p&gt;추가적으로 설정하면 좋은 내용을 덧붙인다.&lt;/p&gt;
-&lt;h2&gt;린트 관련 명령어 추가&lt;/h2&gt;
-&lt;p&gt;일괄로 eslint에러나는 내용을 확인하거나 수정하려할 때 필요한 명령어다.&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;json&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;scripts&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-8 grvsc-t4tStz-7&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;&amp;quot;lint&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;eslint --cache &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;src/**/*.{js,jsx,ts,tsx,json}&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3&quot;&gt;&amp;quot;lint:fix&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;eslint --cache --fix &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;src/**/*.{js,jsx,ts,tsx,json}&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-4 grvsc-t4tStz-3&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-11 grvsc-t4tStz-10&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;  },&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;에러 확인&lt;/h3&gt;
-&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;yarn lint&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;에러 수정&lt;/h3&gt;
-&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;2&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;yarn lint:fix &lt;/span&gt;&lt;span class=&quot;grvsc-t9ljLd-3 grvsc-t4tStz-2&quot;&gt;# 자동으로 수정가능한 내용만 수정해준다.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[Git] git 이전 브랜치로 되돌아가기]]></title><description><![CDATA[이전 브랜치로 되돌아가기 git checkout @{-n} n단계 이전의 브랜치로 돌아가는 명령어다. 더 간단하게는. @{-1}를 -로 축약해서 사용 가능하다. 두 브랜치를 병행하여 작업하는 경우가 많은데 이 떄 git checkout -를 이용하자.]]></description><link>https://subutuo.github.io/blog/git/git 이전 브랜치로 되돌아가기/</link><guid isPermaLink="false">https://subutuo.github.io/blog/git/git 이전 브랜치로 되돌아가기/</guid><pubDate>Sat, 01 Oct 2022 15:53:34 GMT</pubDate><content:encoded>&lt;h2&gt;이전 브랜치로 되돌아가기&lt;/h2&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;git checkout @{-1}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;git checkout @{-n}&lt;/code&gt; n단계 이전의 브랜치로 돌아가는 명령어다.&lt;/p&gt;
+&lt;h2&gt;더 간단하게는.&lt;/h2&gt;
+&lt;pre class=&quot;grvsc-container abyss grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-t9ljLd-1 grvsc-t4tStz-1&quot;&gt;git checkout -&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;@{-1}를 -로 축약해서 사용 가능하다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;두 브랜치를 병행하여 작업하는 경우가 많은데 이 떄 &lt;code&gt;git checkout -&lt;/code&gt;를 이용하자.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;style class=&quot;grvsc-styles&quot;&gt;
   .grvsc-container {
     overflow: auto;
@@ -490,23 +569,13 @@ vscode에서 받은 &lt;code&gt;prettier Extension&lt;/code&gt;은 prettierrc �
   }
   
   .abyss { background-color: #000c18; }
-  .abyss .grvsc-t9ljLd-i { font-style: italic; }
   .abyss .grvsc-t9ljLd-1 { color: #6688CC; }
-  .abyss .grvsc-t9ljLd-11 { color: #22AA44; }
-  .abyss .grvsc-t9ljLd-8 { color: #F8F8F0; }
-  .abyss .grvsc-t9ljLd-15 { color: #9966B8; }
-  .abyss .grvsc-t9ljLd-4 { color: #F280D0; }
-  .abyss .grvsc-t9ljLd-3 { color: #384887; }
   .abyss .grvsc-line-highlighted::before {
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
   body[data-theme=dark] .grvsc-ps-t4tStz { color: #ffffff; }
   body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-1 { color: #FFFFFF; }
-  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-10 { color: #9DCDF5; }
-  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-7 { color: #FAFBFC; }
-  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-3 { color: #66B5F6; }
-  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-2 { color: #A19B8F; }
   body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-line-highlighted::before {
     background-color: var(--grvsc-line-highlighted-background-color, rgba(0, 0, 0, 0.05));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(0, 0, 0, 0.2));

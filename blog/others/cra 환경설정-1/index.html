@@ -182,23 +182,23 @@ data-styled.g35[id="blogPost__Title-sc-10f9q5o-8"]{content:"boXytW,"}/*!sc*/
 
             setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'))
           })()
-        </script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="layout__Container-sc-vjrsoh-0 llHnTD"><nav aria-label="Global Navigation" class="navBar__Nav-sc-1fur2tn-0 eWDqWP"><div class="background__Background-sc-3cnrol-0 navBar__NavBackground-sc-1fur2tn-4 ZUJjE eNEVLK"></div><div class="navBar__Content-sc-1fur2tn-1 jppRhq"><h1 class="navBar__Title-sc-1fur2tn-2 jXZNjc"><a href="/">YJ&#x27;s Blog</a></h1><div class="navBar__LinkWrap-sc-1fur2tn-7 kkuUEF"><div class="navBar__Curtain-sc-1fur2tn-5 biuShl"></div><div class="navBar__LinkContent-sc-1fur2tn-6 kcdBrh"><button aria-label="Menu" class="menuIcon__MenuIconButton-sc-mfy44q-2 eykCKX"><div class="menuIcon__MenuIconBreadTop-sc-mfy44q-0 eYVgdL"><div></div></div><div class="menuIcon__MenuIconBreadBottom-sc-mfy44q-1 bgvtUy"><div></div></div></button><ul class="navBar__LinkUl-sc-1fur2tn-3 hGyaIj"><li><a href="/">Home</a></li><li><a href="/about/">About</a></li><li><a target="__blank" rel="noreferrer" href="https://github.com/subutuo">Github</a></li><li><button class="themeToggleButton__Button-sc-1k2p4ae-4 jrOsmm"><div class="background__Background-sc-3cnrol-0 themeToggleButton__ButtonBackground-sc-1k2p4ae-1 ZUJjE ebeBjm"></div><div class="themeToggleButton__Content-sc-1k2p4ae-2 jGRDkw"><svg version="1.1" x="0px" y="0px" viewBox="0 0 24 24" class="themeToggleButton__Icon-sc-1k2p4ae-0 gZvVnU"><path d="M16.3,15.2c-4.1-1.2-7.2-4.8-7.5-9.1C8.8,4.8,8.9,3.5,9.3,2.4C4.8,3.6,1.5,8,2.1,13.1c0.5,4.6,4.2,8.3,8.7,8.8 c4.9,0.6,9.2-2.4,10.6-6.7C19.9,15.7,18.1,15.8,16.3,15.2z"></path></svg><span class="themeToggleButton__Text-sc-1k2p4ae-3 StJgp">Dark theme</span></div></button></li></ul></div></div></div></nav><main><article><div class="blogPost__OuterWrapper-sc-10f9q5o-0 cCdnOf"><div class="blogPost__InnerWrapper-sc-10f9q5o-1 jhhiGt"><div><header><div class="blogPost__Info-sc-10f9q5o-4 doqnCN"><span class="category__Category-sc-fn0yqa-0 blogPost__PostCategory-sc-10f9q5o-3 bYuIif bwMrpr">others</span><time dateTime="2022-10-01" class="dateTime__DateTime-sc-1v8ffrd-0 blogPost__Time-sc-10f9q5o-5 hMrSVX ktsvKP">2022-10-01</time></div><h1 class="blogPost__Title-sc-10f9q5o-8 boXytW">CRA - TS &amp; ESLint &amp; prettier 환경 설정 (1)</h1><p class="blogPost__Desc-sc-10f9q5o-6 bCnlhS"></p></header><div class="blogPost__Divider-sc-10f9q5o-7 dRnixY"></div><article class="markdown__Markdown-sc-yto5zt-0 cMdMYY"><p>CRA 프로젝트에 eslint와 prettier를 셋업해보았는데 생각보다 어려워 정리해보았다.</p>
-<p>vscode 환경 기준으로 작성하였다.</p>
-<h2>CRA typescript 템플릿 설치</h2>
+        </script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="layout__Container-sc-vjrsoh-0 llHnTD"><nav aria-label="Global Navigation" class="navBar__Nav-sc-1fur2tn-0 eWDqWP"><div class="background__Background-sc-3cnrol-0 navBar__NavBackground-sc-1fur2tn-4 ZUJjE eNEVLK"></div><div class="navBar__Content-sc-1fur2tn-1 jppRhq"><h1 class="navBar__Title-sc-1fur2tn-2 jXZNjc"><a href="/">YJ&#x27;s Blog</a></h1><div class="navBar__LinkWrap-sc-1fur2tn-7 kkuUEF"><div class="navBar__Curtain-sc-1fur2tn-5 biuShl"></div><div class="navBar__LinkContent-sc-1fur2tn-6 kcdBrh"><button aria-label="Menu" class="menuIcon__MenuIconButton-sc-mfy44q-2 eykCKX"><div class="menuIcon__MenuIconBreadTop-sc-mfy44q-0 eYVgdL"><div></div></div><div class="menuIcon__MenuIconBreadBottom-sc-mfy44q-1 bgvtUy"><div></div></div></button><ul class="navBar__LinkUl-sc-1fur2tn-3 hGyaIj"><li><a href="/">Home</a></li><li><a href="/about/">About</a></li><li><a target="__blank" rel="noreferrer" href="https://github.com/subutuo">Github</a></li><li><button class="themeToggleButton__Button-sc-1k2p4ae-4 jrOsmm"><div class="background__Background-sc-3cnrol-0 themeToggleButton__ButtonBackground-sc-1k2p4ae-1 ZUJjE ebeBjm"></div><div class="themeToggleButton__Content-sc-1k2p4ae-2 jGRDkw"><svg version="1.1" x="0px" y="0px" viewBox="0 0 24 24" class="themeToggleButton__Icon-sc-1k2p4ae-0 gZvVnU"><path d="M16.3,15.2c-4.1-1.2-7.2-4.8-7.5-9.1C8.8,4.8,8.9,3.5,9.3,2.4C4.8,3.6,1.5,8,2.1,13.1c0.5,4.6,4.2,8.3,8.7,8.8 c4.9,0.6,9.2-2.4,10.6-6.7C19.9,15.7,18.1,15.8,16.3,15.2z"></path></svg><span class="themeToggleButton__Text-sc-1k2p4ae-3 StJgp">Dark theme</span></div></button></li></ul></div></div></div></nav><main><article><div class="blogPost__OuterWrapper-sc-10f9q5o-0 cCdnOf"><div class="blogPost__InnerWrapper-sc-10f9q5o-1 jhhiGt"><div><header><div class="blogPost__Info-sc-10f9q5o-4 doqnCN"><span class="category__Category-sc-fn0yqa-0 blogPost__PostCategory-sc-10f9q5o-3 bYuIif bwMrpr">others</span><time dateTime="2022-10-03" class="dateTime__DateTime-sc-1v8ffrd-0 blogPost__Time-sc-10f9q5o-5 hMrSVX ktsvKP">2022-10-03</time></div><h1 class="blogPost__Title-sc-10f9q5o-8 boXytW">CRA - TS &amp; ESLint &amp; prettier 환경 설정 (1)</h1><p class="blogPost__Desc-sc-10f9q5o-6 bCnlhS"></p></header><div class="blogPost__Divider-sc-10f9q5o-7 dRnixY"></div><article class="markdown__Markdown-sc-yto5zt-0 cMdMYY"><p>CRA 프로젝트에 eslint와 prettier를 셋업해보자.</p>
+<h2>1. CRA typescript 템플릿 설치</h2>
 <p>우선 Create React App 타입스크립트 템플릿으로 프로젝트를 생성한다.</p>
 <pre class="grvsc-container abyss grvsc-ps-t4tStz" data-language="bash" data-index="0"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">yarn create react-app my-app --template typescript</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-15 grvsc-t4tStz-1">cd</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1"> my-app</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">code </span><span class="grvsc-t9ljLd-15 grvsc-t4tStz-1">.</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1"> </span><span class="grvsc-t9ljLd-3 grvsc-t4tStz-2"># vs-code 실행</span></span></span></code></pre>
-<h2>ESLint 설치</h2>
+<h2>2. ESLint 사전 준비</h2>
+<h3>eslint 모듈 설치</h3>
 <pre class="grvsc-container abyss grvsc-ps-t4tStz" data-language="bash" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">yarn add -D eslint</span></span></span></code></pre>
-<h2>ESLint Extension 설치</h2>
+<h3>ESLint Extension 설치</h3>
 <p>vscode extensions에서 <code>ESLint</code>를 설치한다.</p>
 <blockquote>
-<p>editor 상에서 포맷팅 기능 + 밑줄로 linting 관련 정보가 필요하므로 설치해준다.</p>
+<p>ESLint환경에선 필수다.</p>
 </blockquote>
-<h2>eslintrc 파일 만들기</h2>
-<p>ESLint를 사용하려면 프로젝트 root에 eslintrc 파일이 있어야 한다.
-해당 프로젝트 최상위 폴더에 가서 터미널로 <code>npm init @eslint/config</code>를 입력한다.</p>
+<h2>3. eslintrc 파일 생성</h2>
+<p>ESLint를 사용하려면 프로젝트 최상위 폴더에 eslintrc 파일이 있어야 한다.<br>
+최상위 폴더에 가서 터미널로 <code>npm init @eslint/config</code>를 입력한다.</p>
 <pre class="grvsc-container abyss grvsc-ps-t4tStz" data-language="bash" data-index="2"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">npm init @eslint/config</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">How would you like to use ESLint</span><span class="grvsc-t9ljLd-7 grvsc-t4tStz-9">?</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1"> ... </span></span></span>
@@ -230,7 +230,8 @@ data-styled.g35[id="blogPost__Title-sc-10f9q5o-8"]{content:"boXytW,"}/*!sc*/
 <code>eslint-plugin-react</code>: react 관련 linting 규칙</p>
 </blockquote>
 <p>아래는 자동 생성된 <code>.eslintrc.js</code> 내용이다.</p>
-<pre class="grvsc-container abyss grvsc-ps-t4tStz" data-language="js" data-index="3"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-5">module</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">.</span><span class="grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-5">exports</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1"> </span><span class="grvsc-t9ljLd-7 grvsc-t4tStz-9">=</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1"> {</span></span></span>
+<pre class="grvsc-container abyss grvsc-ps-t4tStz" data-language="js" data-index="3"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-3 grvsc-t4tStz-2">// .eslintrc.js</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-5">module</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">.</span><span class="grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-5">exports</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1"> </span><span class="grvsc-t9ljLd-7 grvsc-t4tStz-9">=</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1"> {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">  env: {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">    browser: </span><span class="grvsc-t9ljLd-4 grvsc-t4tStz-3">true</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">,</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">    es2021: </span><span class="grvsc-t9ljLd-4 grvsc-t4tStz-3">true</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">,</span></span></span>
@@ -253,7 +254,7 @@ data-styled.g35[id="blogPost__Title-sc-10f9q5o-8"]{content:"boXytW,"}/*!sc*/
 <span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">  rules: {},</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">};</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span></code></pre>
-<h2>React Hooks API 관련 플러그인 추가</h2>
+<h2>4. React Hooks API 관련 플러그인 추가</h2>
 <p>추가로 React 16.8버전에 추가된 Hooks API를 사용한다면 별도의 플러그인을 추가로 받는다.</p>
 <pre class="grvsc-container abyss grvsc-ps-t4tStz" data-language="bash" data-index="4"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">yarn add -D eslint-plugin-react-hooks</span></span></span></code></pre>
 <h3>.eslintrc.js 수정</h3>
@@ -288,21 +289,21 @@ data-styled.g35[id="blogPost__Title-sc-10f9q5o-8"]{content:"boXytW,"}/*!sc*/
 <span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">  },</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">};</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span></code></pre>
-<h2>prettier 설정</h2>
-<p><code>prettier</code>은 소스 내 코드포맷팅(탭 사용할지, 콤마 붙일지, 세미콜론 붙일지..)을 정해주는 모듈이다. 자동으로 포맷팅에 맞게 수정해주는 기능도 있다.<br>
+<h2>5. prettier</h2>
+<p><code>prettier</code>은 소스 내 코드포맷팅을 정해주는 모듈이다.<br>
 prettier은 소스 실행과 상관 없이 가이드만 해주는 역할이기 때문에 ESLint와 연동하여 코드포맷팅을 강제하도록 한다.</p>
 <pre class="grvsc-container abyss grvsc-ps-t4tStz" data-language="bash" data-index="6"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">yarn add -D prettier eslint-plugin-prettier eslint-config-prettier</span></span></span></code></pre>
 <p><code>prettier</code>: prettier 모듈<br>
 <code>eslint-plugin-prettier</code>: prettier 관련 linting 규칙<br>
 <code>eslint-config-prettier</code>: 코드포맷팅 관련 ESLint 룰을 모두 비활성화시킨다. <strong>중요</strong> (충돌방지역할)</p>
-<h2>prettier Extension 설치</h2>
+<h3>prettier Extension 설치</h3>
 <p>vscode extensions에서 <code>Prettier - Code formatter</code>를 설치한다.</p>
 <blockquote>
 <p>editor 상에서 밑줄로 prettier 관련 정보를 표시주거나 포맷팅을 도와준다.</p>
 </blockquote>
-<h2>prettier 설정</h2>
-<p>prettier를 사용하려면 프로젝트 root에 prettierrc 파일이 있어야 한다.<br>
-prettierrc.json 를 root폴더에 만들고 아래의 내용을 입력한다.</p>
+<h3>prettier 설정</h3>
+<p>prettier를 사용하려면 프로젝트 최상위 폴더에 prettierrc 파일이 있어야 한다.<br>
+<code>prettierrc.json</code> 를 만들고 아래의 내용을 입력한다.</p>
 <pre class="grvsc-container abyss grvsc-ps-t4tStz" data-language="json" data-index="7"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">{</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">  </span><span class="grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3">&quot;useTabs&quot;</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">: </span><span class="grvsc-t9ljLd-4 grvsc-t4tStz-3">false</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">,</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">  </span><span class="grvsc-t9ljLd-15 grvsc-t9ljLd-i grvsc-t4tStz-3">&quot;tabWidth&quot;</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">: </span><span class="grvsc-t9ljLd-4 grvsc-t4tStz-3">2</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">,</span></span></span>
@@ -349,7 +350,6 @@ vscode에서 받은 <code>prettier Extension</code>은 prettierrc 설정 내용�
 <span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">    </span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">&quot;prettier/prettier&quot;</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">: </span><span class="grvsc-t9ljLd-11 grvsc-t4tStz-10">&quot;error&quot;</span><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">, </span><span class="grvsc-t9ljLd-3 grvsc-t4tStz-2">// 추가</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">  },</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-t9ljLd-1 grvsc-t4tStz-1">};</span></span></span></code></pre>
-<p>ESLint와 prettier가 충돌나지 않도록 설정하는 것이 핵심이다.</p>
 <style class="grvsc-styles">
   .grvsc-container {
     overflow: auto;
